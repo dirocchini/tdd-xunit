@@ -1,2 +1,2 @@
-testes com c# e dotnet core asdasdasd 
+tdd .net core
 # tdd-xunit
