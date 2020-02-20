@@ -1,0 +1,7 @@
+C:\y_projects\studies\tdd-xunit\.vs\TDDxUnitCore\v16\lut\0\b\TDDxUnitCore.Domain\Debug\netstandard2.1\TDDxUnitCore.Domain.deps.json
+C:\y_projects\studies\tdd-xunit\.vs\TDDxUnitCore\v16\lut\0\b\TDDxUnitCore.Domain\Debug\netstandard2.1\TDDxUnitCore.Domain.dll
+C:\y_projects\studies\tdd-xunit\.vs\TDDxUnitCore\v16\lut\0\i\TDDxUnitCore.Domain\Debug\netstandard2.1\TDDxUnitCore.Domain.csprojAssemblyReference.cache
+C:\y_projects\studies\tdd-xunit\.vs\TDDxUnitCore\v16\lut\0\i\TDDxUnitCore.Domain\Debug\netstandard2.1\TDDxUnitCore.Domain.AssemblyInfoInputs.cache
+C:\y_projects\studies\tdd-xunit\.vs\TDDxUnitCore\v16\lut\0\i\TDDxUnitCore.Domain\Debug\netstandard2.1\TDDxUnitCore.Domain.AssemblyInfo.cs
+C:\y_projects\studies\tdd-xunit\.vs\TDDxUnitCore\v16\lut\0\i\TDDxUnitCore.Domain\Debug\netstandard2.1\TDDxUnitCore.Domain.csproj.CopyComplete
+C:\y_projects\studies\tdd-xunit\.vs\TDDxUnitCore\v16\lut\0\i\TDDxUnitCore.Domain\Debug\netstandard2.1\TDDxUnitCore.Domain.dll

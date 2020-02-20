@@ -1,0 +1,11 @@
+C:\y_projects\studies\tdd-xunit\.vs\TDDxUnitCore\v16\lut\0\b\TDDxUnitCore.Domain.Test\Debug\netcoreapp3.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\y_projects\studies\tdd-xunit\.vs\TDDxUnitCore\v16\lut\0\b\TDDxUnitCore.Domain.Test\Debug\netcoreapp3.1\xunit.runner.reporters.netcoreapp10.dll
+C:\y_projects\studies\tdd-xunit\.vs\TDDxUnitCore\v16\lut\0\b\TDDxUnitCore.Domain.Test\Debug\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll
+C:\y_projects\studies\tdd-xunit\.vs\TDDxUnitCore\v16\lut\0\b\TDDxUnitCore.Domain.Test\Debug\netcoreapp3.1\TDDxUnitCore.Domain.Test.deps.json
+C:\y_projects\studies\tdd-xunit\.vs\TDDxUnitCore\v16\lut\0\b\TDDxUnitCore.Domain.Test\Debug\netcoreapp3.1\TDDxUnitCore.Domain.Test.runtimeconfig.json
+C:\y_projects\studies\tdd-xunit\.vs\TDDxUnitCore\v16\lut\0\b\TDDxUnitCore.Domain.Test\Debug\netcoreapp3.1\TDDxUnitCore.Domain.Test.runtimeconfig.dev.json
+C:\y_projects\studies\tdd-xunit\.vs\TDDxUnitCore\v16\lut\0\b\TDDxUnitCore.Domain.Test\Debug\netcoreapp3.1\TDDxUnitCore.Domain.Test.dll
+C:\y_projects\studies\tdd-xunit\.vs\TDDxUnitCore\v16\lut\0\i\TDDxUnitCore.Domain.Test\Debug\netcoreapp3.1\TDDxUnitCore.Domain.Test.AssemblyInfoInputs.cache
+C:\y_projects\studies\tdd-xunit\.vs\TDDxUnitCore\v16\lut\0\i\TDDxUnitCore.Domain.Test\Debug\netcoreapp3.1\TDDxUnitCore.Domain.Test.AssemblyInfo.cs
+C:\y_projects\studies\tdd-xunit\.vs\TDDxUnitCore\v16\lut\0\i\TDDxUnitCore.Domain.Test\Debug\netcoreapp3.1\TDDxUnitCore.Domain.Test.csproj.CopyComplete
+C:\y_projects\studies\tdd-xunit\.vs\TDDxUnitCore\v16\lut\0\i\TDDxUnitCore.Domain.Test\Debug\netcoreapp3.1\TDDxUnitCore.Domain.Test.dll
