@@ -16,7 +16,7 @@ namespace TDDxUnitCore.Domain.Test
 
 
             //Action
-            a = b;
+            //a = b;
 
 
             //Assert

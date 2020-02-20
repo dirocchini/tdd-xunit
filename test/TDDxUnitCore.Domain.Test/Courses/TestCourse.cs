@@ -14,16 +14,68 @@ namespace TDDxUnitCore.Domain.Test.Courses
             var expectedCourse = new
             {
                 Name = "Dev",
-                Hours = (double)15.57,
+                Workload = (double)15.57,
                 Audience = Audience.Studant,
                 Cost = (double)1500
             };
 
-
-            var course = new Course(expectedCourse.Name, expectedCourse.Hours, expectedCourse.Audience, expectedCourse.Cost);
-
+            var course = new Course(expectedCourse.Name, expectedCourse.Workload, expectedCourse.Audience, expectedCourse.Cost);
 
             expectedCourse.ToExpectedObject().ShouldMatch(course);
+        }
+
+        [Theory(DisplayName = "MustHaveValidName")]
+        [InlineData("")]
+        [InlineData(null)]
+        public void MustHaveValidName(string invalidName)
+        {
+            var expectedCourse = new
+            {
+                Name = "Dev",
+                Workload = (double)15.57,
+                Audience = Audience.Studant,
+                Cost = (double)1500
+            };
+
+            var msg = Assert.Throws<ArgumentException>(() => new Course(invalidName, expectedCourse.Workload, expectedCourse.Audience, expectedCourse.Cost)).Message;
+            Assert.Equal("Enter a valid name (not empty or null)", msg);
+        }
+
+        [Theory(DisplayName = "MustHavePositiveHours")]
+        [InlineData(0)]
+        [InlineData(-1.9)]
+        [InlineData(-299.50)]
+        public void MustHavePositiveHours(double invalidWorkload)
+        {
+            var expectedCourse = new
+            {
+                Name = "Dev",
+                Workload = (double)15.57,
+                Audience = Audience.Studant,
+                Cost = (double)1500
+            };
+
+            var msg = Assert.Throws<ArgumentException>(() => new Course(expectedCourse.Name, invalidWorkload, expectedCourse.Audience, expectedCourse.Cost)).Message;
+            Assert.Equal("Enter a valid workload (greater than zero)", msg);
+        }
+
+
+        [Theory(DisplayName = "MustHavePositiveCost")]
+        [InlineData(0)]
+        [InlineData(-1.9)]
+        [InlineData(-299.50)]
+        public void MustHavePositiveCost(double invalidCost)
+        {
+            var expectedCourse = new
+            {
+                Name = "Dev",
+                Workload = (double)15.57,
+                Audience = Audience.Studant,
+                Cost = (double)1500
+            };
+
+            var msg = Assert.Throws<ArgumentException>(() => new Course(expectedCourse.Name, expectedCourse.Workload, expectedCourse.Audience, invalidCost)).Message;
+            Assert.Equal("Enter a valid cost (greater than zero)", msg);
         }
     }
 
@@ -31,16 +83,30 @@ namespace TDDxUnitCore.Domain.Test.Courses
 
     class Course
     {
-        public Course(string name, double hours, Audience audience, double cost)
+        public Course(string name, double workload, Audience audience, double cost)
         {
             Name = name;
-            Hours = hours;
+            Workload = workload;
             Audience = audience;
             Cost = cost;
+
+            Validate();
+        }
+
+        private void Validate()
+        {
+            if (string.IsNullOrEmpty(Name))
+                throw new ArgumentException("Enter a valid name (not empty or null)");
+
+            if (Workload <= 0)
+                throw new ArgumentException("Enter a valid workload (greater than zero)");
+
+            if (Cost <= 0)
+                throw new ArgumentException("Enter a valid cost (greater than zero)");
         }
 
         public string Name { get; private set; }
-        public double Hours { get; private set; }
+        public double Workload { get; private set; }
         public Audience Audience { get; private set; }
         public double Cost { get; private set; }
     }
