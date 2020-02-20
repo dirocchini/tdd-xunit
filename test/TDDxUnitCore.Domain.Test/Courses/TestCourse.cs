@@ -1,8 +1,7 @@
 ﻿using ExpectedObjects;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
+using TDDxUnitCore.Domain.Test._Tooling;
 
 namespace TDDxUnitCore.Domain.Test.Courses
 {
@@ -37,8 +36,8 @@ namespace TDDxUnitCore.Domain.Test.Courses
                 Cost = (double)1500
             };
 
-            var msg = Assert.Throws<ArgumentException>(() => new Course(invalidName, expectedCourse.Workload, expectedCourse.Audience, expectedCourse.Cost)).Message;
-            Assert.Equal("Enter a valid name (not empty or null)", msg);
+            Assert.Throws<ArgumentException>(() => new Course(invalidName, expectedCourse.Workload, expectedCourse.Audience, expectedCourse.Cost))
+                .WithMessage("Enter a valid name (not empty or null)");
         }
 
         [Theory(DisplayName = "MustHavePositiveHours")]
@@ -55,8 +54,8 @@ namespace TDDxUnitCore.Domain.Test.Courses
                 Cost = (double)1500
             };
 
-            var msg = Assert.Throws<ArgumentException>(() => new Course(expectedCourse.Name, invalidWorkload, expectedCourse.Audience, expectedCourse.Cost)).Message;
-            Assert.Equal("Enter a valid workload (greater than zero)", msg);
+            Assert.Throws<ArgumentException>(() => new Course(expectedCourse.Name, invalidWorkload, expectedCourse.Audience, expectedCourse.Cost))
+                .WithMessage("Enter a valid workload (greater than zero)");
         }
 
 
@@ -74,8 +73,8 @@ namespace TDDxUnitCore.Domain.Test.Courses
                 Cost = (double)1500
             };
 
-            var msg = Assert.Throws<ArgumentException>(() => new Course(expectedCourse.Name, expectedCourse.Workload, expectedCourse.Audience, invalidCost)).Message;
-            Assert.Equal("Enter a valid cost (greater than zero)", msg);
+            Assert.Throws<ArgumentException>(() => new Course(expectedCourse.Name, expectedCourse.Workload, expectedCourse.Audience, invalidCost))
+                .WithMessage("Enter a valid cost (greater than zero)");
         }
     }
 
