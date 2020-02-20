@@ -18,6 +18,7 @@ namespace TDDxUnitCore.Domain.Test
             //Action
             a = b;
 
+
             //Assert
             Assert.Equal(a, b);
         }
