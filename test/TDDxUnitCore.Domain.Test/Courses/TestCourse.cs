@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExpectedObjects;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
@@ -10,14 +11,19 @@ namespace TDDxUnitCore.Domain.Test.Courses
         [Fact(DisplayName = "MustCreateCourse")]
         public void MustCreateCourse()
         {
-            string name = "Dev";
-            double hours = 5;
-            string focus = "Non Dev";
-            double cost = 1500.49;
+            var expectedCourse = new
+            {
+                Name = "Dev",
+                Hours = (double)15.57,
+                Audience = Audience.Studant,
+                Cost = (double)1500
+            };
 
-            var course = new Course(name, hours, focus, cost);
 
-            Assert.Equal(name, course.Name);
+            var course = new Course(expectedCourse.Name, expectedCourse.Hours, expectedCourse.Audience, expectedCourse.Cost);
+
+
+            expectedCourse.ToExpectedObject().ShouldMatch(course);
         }
     }
 
@@ -25,17 +31,25 @@ namespace TDDxUnitCore.Domain.Test.Courses
 
     class Course
     {
-        public Course(string name, double hours, string focus, double cost)
+        public Course(string name, double hours, Audience audience, double cost)
         {
             Name = name;
             Hours = hours;
-            Focus = focus;
+            Audience = audience;
             Cost = cost;
         }
 
         public string Name { get; private set; }
         public double Hours { get; private set; }
-        public string Focus { get; private set; }
+        public Audience Audience { get; private set; }
         public double Cost { get; private set; }
+    }
+
+    public enum Audience
+    {
+        Studant,
+        NonDev,
+        Employee,
+        CTO
     }
 }
