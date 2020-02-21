@@ -96,3 +96,5 @@ C:\y_projects\studies\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcorea
 C:\y_projects\studies\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\Bogus.dll
 C:\y_projects\studies\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\TDDxUnitCore.Domain.dll
 C:\y_projects\studies\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\TDDxUnitCore.Domain.pdb
+C:\y_projects\studies\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\y_projects\studies\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\Moq.dll
