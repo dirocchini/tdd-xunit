@@ -1,4 +1,5 @@
-﻿using Moq;
+﻿using Bogus;
+using Moq;
 using System;
 using TDDxUnitCore.Domain.Courses;
 using Xunit;
@@ -7,23 +8,50 @@ namespace TDDxUnitCore.Domain.Test.Courses
 {
     public class CourseServiceTest
     {
-        [Fact(DisplayName = "ShouldAddCourse")]
-        public void ShouldAddCourse()
+        private readonly DTOCourse _dtoCourse;
+        private readonly Mock<ICourseRepository> _courseRepositoryMock;
+        private readonly CourseService _courseService;
+
+        public CourseServiceTest()
         {
-            var dtoCourse = new DTOCourse("A Course", "A Description", 123.2, 1, 213);
+            var faker = new Faker();
+            _dtoCourse = new DTOCourse(
+                faker.Random.Words()
+                , faker.Lorem.Paragraph()
+                , faker.Random.Double(5, 234)
+                , 1
+                , faker.Random.Double(1000, 1231)
+            );
 
-            var courseRepositoryMock = new Mock<ICourseRepository>();
-            var courseService = new CourseService(courseRepositoryMock.Object);
-            courseService.Save(dtoCourse);
+            _courseRepositoryMock = new Mock<ICourseRepository>();
+            _courseService = new CourseService(_courseRepositoryMock.Object);
 
+        }
 
-            courseRepositoryMock.Verify(r => r.Add(It.IsAny<Course>()));
+        [Fact(DisplayName = "MustCallAddCourse")]
+        public void MustCallAddCourse()
+        {
+            _courseService.Save(_dtoCourse);
+            _courseRepositoryMock.Verify(r => r.Add(It.IsAny<Course>()));
+        }
+
+        [Fact(DisplayName = "MustAddCourseEqualsToDto")]
+        public void MustAddCourseEqualsToDto()
+        {
+            _courseService.Save(_dtoCourse);
+            _courseRepositoryMock.Verify(r => r.Add(
+                It.Is<Course>(c =>
+                    c.Name.Equals(_dtoCourse.Name) &&
+                    c.Description.Equals(_dtoCourse.Description)
+                )
+            ));
         }
     }
 
     public interface ICourseRepository
     {
         void Add(Course course);
+        void Update(Course course);
     }
 
     public class CourseService
