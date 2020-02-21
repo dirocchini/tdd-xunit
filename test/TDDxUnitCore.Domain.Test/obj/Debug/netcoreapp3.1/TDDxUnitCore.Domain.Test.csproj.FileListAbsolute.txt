@@ -93,3 +93,6 @@ C:\y_projects\studies\tdd-xunit\test\TDDxUnitCore.Domain.Test\obj\Debug\netcorea
 C:\y_projects\studies\tdd-xunit\test\TDDxUnitCore.Domain.Test\obj\Debug\netcoreapp3.1\TDDxUnitCore.Domain.Test.dll
 C:\y_projects\studies\tdd-xunit\test\TDDxUnitCore.Domain.Test\obj\Debug\netcoreapp3.1\TDDxUnitCore.Domain.Test.pdb
 C:\y_projects\studies\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\ExpectedObjects.dll
+C:\y_projects\studies\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\Bogus.dll
+C:\y_projects\studies\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\TDDxUnitCore.Domain.dll
+C:\y_projects\studies\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\TDDxUnitCore.Domain.pdb

@@ -4,6 +4,7 @@ using Xunit;
 using TDDxUnitCore.Domain.Test._Tooling;
 using Xunit.Abstractions;
 using TDDxUnitCore.Domain.Test._Builders;
+using TDDxUnitCore.Domain.Courses;
 
 namespace TDDxUnitCore.Domain.Test.Courses
 {
@@ -20,14 +21,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
         [Fact(DisplayName = "MustCreateCourse")]
         public void MustCreateCourse()
         {
-            var expectedCourse = new
-            {
-                Name = "Dev",
-                Description = "My Desc",
-                Workload = (double)15.57,
-                Audience = Audience.Studant,
-                Cost = (double)1500
-            };
+            var expectedCourse = BuilderCourse.New().Build();
 
             var course = new Course(
                 expectedCourse.Name, expectedCourse.Description, expectedCourse.Workload, expectedCourse.Audience, expectedCourse.Cost);
@@ -64,47 +58,5 @@ namespace TDDxUnitCore.Domain.Test.Courses
             Assert.Throws<ArgumentException>(() => BuilderCourse.New().WithCost(invalidCost).Build())
                 .WithMessage("Enter a valid cost (greater than zero)");
         }
-    }
-
-
-
-    public class Course
-    {
-        public Course(string name, string description, double workload, Audience audience, double cost)
-        {
-            Name = name;
-            Description = description;
-            Workload = workload;
-            Audience = audience;
-            Cost = cost;
-
-            Validate();
-        }
-
-        private void Validate()
-        {
-            if(string.IsNullOrEmpty(Name))
-                throw new ArgumentException("Enter a valid name (not empty or null)");
-
-            if (Workload <= 0)
-                throw new ArgumentException("Enter a valid workload (greater than zero)");
-
-            if (Cost <= 0)
-                throw new ArgumentException("Enter a valid cost (greater than zero)");
-        }
-
-        public string Name { get; private set; }
-        public string Description { get; private set; }
-        public double Workload { get; private set; }
-        public Audience Audience { get; private set; }
-        public double Cost { get; private set; }
-    }
-
-    public enum Audience
-    {
-        Studant,
-        NonDev,
-        Employee,
-        CTO
     }
 }

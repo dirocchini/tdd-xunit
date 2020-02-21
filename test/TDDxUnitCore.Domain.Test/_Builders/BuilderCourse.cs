@@ -1,17 +1,32 @@
-﻿using System;
+﻿using Bogus;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using TDDxUnitCore.Domain.Courses;
 using TDDxUnitCore.Domain.Test.Courses;
 
 namespace TDDxUnitCore.Domain.Test._Builders
 {
     public class BuilderCourse
     {
-        private string _name = "Dev";
-        private string _description = "Dev for everyone";
-        private double _workload = 213.5;
-        private Audience _audience = Audience.NonDev;
-        private double _cost = 332;
+        private string _name { get; set; }
+        private string _description { get; set; }
+        private double _workload { get; set; }
+        private Audience _audience { get; set; }
+        private double _cost { get; set; }
+
+        private Faker _faker;
+
+        public BuilderCourse()
+        {
+            _faker = new Faker();
+            _name = _faker.Person.FullName;
+            _description = string.Join(' ', _faker.Lorem.Words(7));
+            _workload = _faker.Random.Double(50, 5684);
+            _cost = _faker.Finance.Random.Double(1235, 55654);
+
+            _audience = Audience.NonDev;
+        }
 
         public static BuilderCourse New()
         {
