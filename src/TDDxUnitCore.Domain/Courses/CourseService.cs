@@ -17,12 +17,10 @@ namespace TDDxUnitCore.Domain.Courses
             if(courseAlreadySaved != null)
                 throw new ArgumentException("Course Name Already Used by Another Course");
 
-
-            Enum.TryParse(typeof(Audience), dtoCourse.Audience, out var audience);
-            _ = audience ??
+            if(!Enum.TryParse<Audience>(dtoCourse.Audience, out var audience))
                 throw new ArgumentException("Must Enter a Valid Audience");
 
-            var course = new Course(dtoCourse.Name, dtoCourse.Description, dtoCourse.Workload, (Audience)audience, dtoCourse.Cost);
+            var course = new Course(dtoCourse.Name, dtoCourse.Description, dtoCourse.Workload, audience, dtoCourse.Cost);
 
             _courseRepository.Add(course);
         }

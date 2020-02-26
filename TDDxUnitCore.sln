@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDxUnitCore.Domain.Test", "test\TDDxUnitCore.Domain.Test\TDDxUnitCore.Domain.Test.csproj", "{72BF80D2-F538-4D60-99AD-8EB154FD6F1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDDxUnitCore.Domain.Test", "test\TDDxUnitCore.Domain.Test\TDDxUnitCore.Domain.Test.csproj", "{72BF80D2-F538-4D60-99AD-8EB154FD6F1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDxUnitCore.Domain", "src\TDDxUnitCore.Domain\TDDxUnitCore.Domain.csproj", "{635FBDFC-190B-460B-980A-D5296EDD8C1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDDxUnitCore.Domain", "src\TDDxUnitCore.Domain\TDDxUnitCore.Domain.csproj", "{635FBDFC-190B-460B-980A-D5296EDD8C1E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "code", "code", "{1E2B81CC-8802-4072-9CE9-AD81E6B6CB99}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{5FD70E6F-72F1-4379-8111-FD42FDFB6626}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDxUnitCore.Web", "src\TDDxUnitCore.Web\TDDxUnitCore.Web.csproj", "{A7357738-B2DF-4414-8303-1E100C58E71F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{635FBDFC-190B-460B-980A-D5296EDD8C1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{635FBDFC-190B-460B-980A-D5296EDD8C1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{635FBDFC-190B-460B-980A-D5296EDD8C1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7357738-B2DF-4414-8303-1E100C58E71F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7357738-B2DF-4414-8303-1E100C58E71F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7357738-B2DF-4414-8303-1E100C58E71F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7357738-B2DF-4414-8303-1E100C58E71F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{72BF80D2-F538-4D60-99AD-8EB154FD6F1D} = {5FD70E6F-72F1-4379-8111-FD42FDFB6626}
 		{635FBDFC-190B-460B-980A-D5296EDD8C1E} = {1E2B81CC-8802-4072-9CE9-AD81E6B6CB99}
+		{A7357738-B2DF-4414-8303-1E100C58E71F} = {1E2B81CC-8802-4072-9CE9-AD81E6B6CB99}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {20D6A9D2-66A7-4A8E-A663-7A17AE0F44F0}
