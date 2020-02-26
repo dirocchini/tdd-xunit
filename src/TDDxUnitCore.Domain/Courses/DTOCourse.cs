@@ -2,6 +2,10 @@
 {
     public class DTOCourse
     {
+        public DTOCourse()
+        {
+                
+        }
         public DTOCourse(string name, string description, double workload, string audience, double cost)
         {
             Name = name;

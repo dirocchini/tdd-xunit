@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TDDxUnitCore.Domain._Base;
 
 namespace TDDxUnitCore.Domain.Courses
 {
-    public class Course
+    public class Course : Entity
     {
         public Course(string name, string description, double workload, Audience audience, double cost)
         {

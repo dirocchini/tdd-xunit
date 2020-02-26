@@ -1,0 +1,5 @@
+C:\y_projects\studies\tdd-xunit\src\TDDxUnitCore.Persistence\obj\Debug\netstandard2.0\TDDxUnitCore.Persistence.AssemblyInfoInputs.cache
+C:\y_projects\studies\tdd-xunit\src\TDDxUnitCore.Persistence\obj\Debug\netstandard2.0\TDDxUnitCore.Persistence.AssemblyInfo.cs
+C:\y_projects\studies\tdd-xunit\src\TDDxUnitCore.Persistence\bin\Debug\netstandard2.0\TDDxUnitCore.Persistence.deps.json
+C:\y_projects\studies\tdd-xunit\src\TDDxUnitCore.Persistence\bin\Debug\netstandard2.0\TDDxUnitCore.Persistence.dll
+C:\y_projects\studies\tdd-xunit\src\TDDxUnitCore.Persistence\obj\Debug\netstandard2.0\TDDxUnitCore.Persistence.csprojAssemblyReference.cache
