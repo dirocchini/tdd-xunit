@@ -4,6 +4,7 @@ using System;
 using TDDxUnitCore.Domain.Courses;
 using Xunit;
 using TDDxUnitCore.Domain.Test._Tooling;
+using TDDxUnitCore.Domain.Test._Builders;
 
 namespace TDDxUnitCore.Domain.Test.Courses
 {
@@ -42,8 +43,8 @@ namespace TDDxUnitCore.Domain.Test.Courses
             _courseService.Save(_dtoCourse);
             _courseRepositoryMock.Verify(r => r.Add(
                 It.Is<Course>(c =>
-                    c.Name.Equals(_dtoCourse.Name) &&
-                    c.Description.Equals(_dtoCourse.Description)
+                    c.Name.Equals(_dtoCourse.Name, StringComparison.InvariantCultureIgnoreCase) &&
+                    c.Description.Equals(_dtoCourse.Description, StringComparison.InvariantCultureIgnoreCase)
                 )
             ));
         }
@@ -53,15 +54,26 @@ namespace TDDxUnitCore.Domain.Test.Courses
             var invalidAudience = "medics";
             _dtoCourse.Audience = invalidAudience;
 
-            Assert.Throws<ArgumentException>(() => _courseService.Save(_dtoCourse))
-                .WithMessage("Must Enter a Valid Audience");
+            Assert.Throws<ArgumentException>(() =>
+                _courseService.Save(_dtoCourse)).WithMessage("Must Enter a Valid Audience");
         }
+
+        [Fact(DisplayName = "MustAddAUniqueCourseName")]
+        public void MustAddAUniqueCourseName()
+        {
+            var courseAlreadySaved = BuilderCourse.New().WithName(_dtoCourse.Name).Build();
+            _courseRepositoryMock.Setup(r => r.GetByName(_dtoCourse.Name)).Returns(courseAlreadySaved);
+
+            Assert.Throws<ArgumentException>(() =>
+                _courseService.Save(_dtoCourse)).WithMessage("Course Name Already Used by Another Course");
+        } 
     }
 
     public interface ICourseRepository
     {
         void Add(Course course);
         void Update(Course course);
+        Course GetByName(string name);
     }
 
     public class CourseService
@@ -75,8 +87,12 @@ namespace TDDxUnitCore.Domain.Test.Courses
 
         public void Save(DTOCourse dtoCourse)
         {
-            Enum.TryParse(typeof(Audience), dtoCourse.Audience, out var audience);
+            var courseAlreadySaved = _courseRepository.GetByName(dtoCourse.Name);
+            if(courseAlreadySaved != null)
+                throw new ArgumentException("Course Name Already Used by Another Course");
 
+
+            Enum.TryParse(typeof(Audience), dtoCourse.Audience, out object audience);
             _ = audience ??
                 throw new ArgumentException("Must Enter a Valid Audience");
 
