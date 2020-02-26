@@ -48,6 +48,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
                 )
             ));
         }
+
         [Fact(DisplayName = "ShouldAddValidAudience")]
         public void ShouldAddValidAudience()
         {
@@ -66,57 +67,6 @@ namespace TDDxUnitCore.Domain.Test.Courses
 
             Assert.Throws<ArgumentException>(() =>
                 _courseService.Save(_dtoCourse)).WithMessage("Course Name Already Used by Another Course");
-        } 
-    }
-
-    public interface ICourseRepository
-    {
-        void Add(Course course);
-        void Update(Course course);
-        Course GetByName(string name);
-    }
-
-    public class CourseService
-    {
-        private readonly ICourseRepository _courseRepository;
-
-        public CourseService(ICourseRepository courseRepository)
-        {
-            _courseRepository = courseRepository;
         }
-
-        public void Save(DTOCourse dtoCourse)
-        {
-            var courseAlreadySaved = _courseRepository.GetByName(dtoCourse.Name);
-            if(courseAlreadySaved != null)
-                throw new ArgumentException("Course Name Already Used by Another Course");
-
-
-            Enum.TryParse(typeof(Audience), dtoCourse.Audience, out object audience);
-            _ = audience ??
-                throw new ArgumentException("Must Enter a Valid Audience");
-
-            var course = new Course(dtoCourse.Name, dtoCourse.Description, dtoCourse.Workload, (Audience)audience, dtoCourse.Cost);
-
-            _courseRepository.Add(course);
-        }
-    }
-
-
-    public class DTOCourse
-    {
-        public DTOCourse(string name, string description, double workload, string audience, double cost)
-        {
-            Name = name;
-            Description = description;
-            Workload = workload;
-            Audience = audience;
-            Cost = cost;
-        }
-        public string Name { get; private set; }
-        public string Description { get; private set; }
-        public double Workload { get; private set; }
-        public string Audience { get; set; }
-        public double Cost { get; private set; }
     }
 }
