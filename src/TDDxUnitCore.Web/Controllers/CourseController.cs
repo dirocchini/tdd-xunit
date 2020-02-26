@@ -12,5 +12,10 @@ namespace TDDxUnitCore.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult New()
+        {
+            return View();
+        }
     }
 }
