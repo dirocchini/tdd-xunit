@@ -8,11 +8,11 @@ using TDDxUnitCore.Domain.Courses;
 
 namespace TDDxUnitCore.Domain.Test.Courses
 {
-    public class TestCourse
+    public class CourseTest
     {
         private readonly ITestOutputHelper _output;
 
-        public TestCourse(ITestOutputHelper output)
+        public CourseTest(ITestOutputHelper output)
         {
             _output = output;
             _output.WriteLine("Constructor called");

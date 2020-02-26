@@ -3,6 +3,7 @@ using Moq;
 using System;
 using TDDxUnitCore.Domain.Courses;
 using Xunit;
+using TDDxUnitCore.Domain.Test._Tooling;
 
 namespace TDDxUnitCore.Domain.Test.Courses
 {
@@ -19,7 +20,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
                 faker.Random.Words()
                 , faker.Lorem.Paragraph()
                 , faker.Random.Double(5, 234)
-                , 1
+                , "Studant"
                 , faker.Random.Double(1000, 1231)
             );
 
@@ -46,6 +47,15 @@ namespace TDDxUnitCore.Domain.Test.Courses
                 )
             ));
         }
+        [Fact(DisplayName = "ShouldAddValidAudience")]
+        public void ShouldAddValidAudience()
+        {
+            var invalidAudience = "medics";
+            _dtoCourse.Audience = invalidAudience;
+
+            Assert.Throws<ArgumentException>(() => _courseService.Save(_dtoCourse))
+                .WithMessage("Must Enter a Valid Audience");
+        }
     }
 
     public interface ICourseRepository
@@ -65,7 +75,12 @@ namespace TDDxUnitCore.Domain.Test.Courses
 
         public void Save(DTOCourse dtoCourse)
         {
-            var course = new Course(dtoCourse.Name, dtoCourse.Description, dtoCourse.Workload, Audience.CTO, dtoCourse.Cost);
+            Enum.TryParse(typeof(Audience), dtoCourse.Audience, out var audience);
+
+            _ = audience ??
+                throw new ArgumentException("Must Enter a Valid Audience");
+
+            var course = new Course(dtoCourse.Name, dtoCourse.Description, dtoCourse.Workload, (Audience)audience, dtoCourse.Cost);
 
             _courseRepository.Add(course);
         }
@@ -74,18 +89,18 @@ namespace TDDxUnitCore.Domain.Test.Courses
 
     public class DTOCourse
     {
-        public DTOCourse(string name, string description, double workload, int audienceId, double cost)
+        public DTOCourse(string name, string description, double workload, string audience, double cost)
         {
             Name = name;
             Description = description;
             Workload = workload;
-            AudienceId = audienceId;
+            Audience = audience;
             Cost = cost;
         }
         public string Name { get; private set; }
         public string Description { get; private set; }
         public double Workload { get; private set; }
-        public int AudienceId { get; private set; }
+        public string Audience { get; set; }
         public double Cost { get; private set; }
     }
 }
