@@ -27,10 +27,11 @@ namespace TDDxUnitCore.Web.Controllers
             return View(new DTOCourse());
         }
 
-        public IActionResult Save(DTOCourse dtoCourse)
+        [HttpPost]
+        public IActionResult Create(DTOCourse model)
         {
-            _courseService.Save(dtoCourse);
-            return Ok();
+            _courseService.Save(model);
+            return View();
         }
     }
 }

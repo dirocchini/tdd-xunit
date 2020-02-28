@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TDDxUnitCore.IoC;
 
 namespace TDDxUnitCore.Web
 {
@@ -23,6 +24,9 @@ namespace TDDxUnitCore.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            StartupIoC.ConfigureServices(services, Configuration);
+
             services.AddMvc()
                 .AddRazorRuntimeCompilation();
         }
