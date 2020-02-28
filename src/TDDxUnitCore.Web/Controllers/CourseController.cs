@@ -31,10 +31,10 @@ namespace TDDxUnitCore.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(DTOCourse course)
+        public IActionResult CreateOrEdit(DTOCourse course)
         {
             _courseService.Save(course);
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }

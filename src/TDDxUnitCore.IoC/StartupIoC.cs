@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +18,7 @@ namespace TDDxUnitCore.IoC
 
             services.AddScoped(typeof(IRepositoryBase<>), typeof(BaseRepository<>));
             services.AddScoped(typeof(ICourseRepository), typeof(CourseRepository));
+            services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
 
             services.AddScoped<CourseService>();
         }
