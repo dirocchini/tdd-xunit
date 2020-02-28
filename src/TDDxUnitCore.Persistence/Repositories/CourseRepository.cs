@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using TDDxUnitCore.Domain.Courses;
 using TDDxUnitCore.Persistence.Contexts;
@@ -18,6 +20,10 @@ namespace TDDxUnitCore.Persistence.Repositories
 
         public Course GetByName(string name)
         {
+            if (string.IsNullOrEmpty(name))
+                return null;
+                
+
             var entity = _context.Set<Course>().Where(c => c.Name.ToLower().Trim().Contains(name.Trim().ToLower()));
 
             if (entity.Any())
