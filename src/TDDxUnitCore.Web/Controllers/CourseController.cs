@@ -9,11 +9,11 @@ namespace TDDxUnitCore.Web.Controllers
 {
     public class CourseController : Controller
     {
-        private readonly ICourseRepository _courseRepository;
+        private readonly CourseService _courseService;
 
-        public CourseController(ICourseRepository courseRepository)
+        public CourseController(CourseService courseService)
         {
-            _courseRepository = courseRepository;
+            _courseService = courseService;
         }
 
 
@@ -25,6 +25,12 @@ namespace TDDxUnitCore.Web.Controllers
         public IActionResult Create()
         {
             return View(new DTOCourse());
+        }
+
+        public IActionResult Save(DTOCourse dtoCourse)
+        {
+            _courseService.Save(dtoCourse);
+            return Ok();
         }
     }
 }

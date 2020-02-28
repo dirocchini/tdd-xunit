@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDxUnitCore.Web", "src\TDD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDxUnitCore.Persistence", "src\TDDxUnitCore.Persistence\TDDxUnitCore.Persistence.csproj", "{E792D2F2-3895-4245-B4D8-593BA53A34A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDxUnitCore.IoC", "src\TDDxUnitCore.IoC\TDDxUnitCore.IoC.csproj", "{34595CC7-3C1A-442D-852D-C01789A6712C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{E792D2F2-3895-4245-B4D8-593BA53A34A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E792D2F2-3895-4245-B4D8-593BA53A34A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E792D2F2-3895-4245-B4D8-593BA53A34A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34595CC7-3C1A-442D-852D-C01789A6712C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34595CC7-3C1A-442D-852D-C01789A6712C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34595CC7-3C1A-442D-852D-C01789A6712C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34595CC7-3C1A-442D-852D-C01789A6712C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{635FBDFC-190B-460B-980A-D5296EDD8C1E} = {1E2B81CC-8802-4072-9CE9-AD81E6B6CB99}
 		{FB3415AB-4C27-488D-8551-A18B5564DE71} = {1E2B81CC-8802-4072-9CE9-AD81E6B6CB99}
 		{E792D2F2-3895-4245-B4D8-593BA53A34A4} = {1E2B81CC-8802-4072-9CE9-AD81E6B6CB99}
+		{34595CC7-3C1A-442D-852D-C01789A6712C} = {1E2B81CC-8802-4072-9CE9-AD81E6B6CB99}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {20D6A9D2-66A7-4A8E-A663-7A17AE0F44F0}

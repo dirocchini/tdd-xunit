@@ -1,9 +1,9 @@
-﻿namespace TDDxUnitCore.Domain.Courses
+﻿using TDDxUnitCore.Domain._Base;
+
+namespace TDDxUnitCore.Domain.Courses
 {
-    public interface ICourseRepository
+    public interface ICourseRepository : IRepositoryBase<Course>
     {
-        void Add(Course course);
-        void Update(Course course);
         Course GetByName(string name);
     }
 }
