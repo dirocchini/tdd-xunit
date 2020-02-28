@@ -6,6 +6,7 @@ namespace TDDxUnitCore.Domain._Base
     {
         TEntity GetById(int id);
         List<TEntity> Get();
+        TEntity Get(int id);
         void Add(TEntity entity);
     }
 }

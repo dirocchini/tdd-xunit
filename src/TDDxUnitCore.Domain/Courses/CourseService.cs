@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TDDxUnitCore.Domain.Courses
 {
@@ -23,6 +24,24 @@ namespace TDDxUnitCore.Domain.Courses
             var course = new Course(dtoCourse.Name, dtoCourse.Description, dtoCourse.Workload, audience, dtoCourse.Cost);
 
             _courseRepository.Add(course);
+        }
+
+        public List<DTOCourse> GetAll()
+        {
+            var courses = _courseRepository.Get();
+            List<DTOCourse> dtoCourses = new List<DTOCourse>();
+
+            courses.ForEach(c => 
+                    dtoCourses.Add(new DTOCourse(c.Id, c.Name, c.Description, c.Workload, c.Audience.ToString(), c.Cost))
+                );
+
+            return dtoCourses;
+        }
+
+        public DTOCourse Get(int id)
+        {
+            var course = _courseRepository.Get(id);
+            return new DTOCourse(course.Id, course.Name, course.Description, course.Workload, course.Audience.ToString(), course.Cost);
         }
     }
 }

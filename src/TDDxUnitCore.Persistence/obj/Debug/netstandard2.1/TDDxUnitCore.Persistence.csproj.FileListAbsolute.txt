@@ -9,3 +9,14 @@ C:\y_projects\studies\tdd-xunit\src\TDDxUnitCore.Persistence\obj\Debug\netstanda
 C:\y_projects\studies\tdd-xunit\src\TDDxUnitCore.Persistence\obj\Debug\netstandard2.1\TDDxUnitCore.Persistence.csproj.CopyComplete
 C:\y_projects\studies\tdd-xunit\src\TDDxUnitCore.Persistence\obj\Debug\netstandard2.1\TDDxUnitCore.Persistence.dll
 C:\y_projects\studies\tdd-xunit\src\TDDxUnitCore.Persistence\obj\Debug\netstandard2.1\TDDxUnitCore.Persistence.pdb
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Persistence\bin\Debug\netstandard2.1\TDDxUnitCore.Persistence.deps.json
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Persistence\bin\Debug\netstandard2.1\TDDxUnitCore.Persistence.dll
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Persistence\bin\Debug\netstandard2.1\TDDxUnitCore.Persistence.pdb
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Persistence\bin\Debug\netstandard2.1\TDDxUnitCore.Domain.dll
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Persistence\bin\Debug\netstandard2.1\TDDxUnitCore.Domain.pdb
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Persistence\obj\Debug\netstandard2.1\TDDxUnitCore.Persistence.csprojAssemblyReference.cache
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Persistence\obj\Debug\netstandard2.1\TDDxUnitCore.Persistence.AssemblyInfoInputs.cache
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Persistence\obj\Debug\netstandard2.1\TDDxUnitCore.Persistence.AssemblyInfo.cs
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Persistence\obj\Debug\netstandard2.1\TDDxUnitCore.Persistence.csproj.CopyComplete
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Persistence\obj\Debug\netstandard2.1\TDDxUnitCore.Persistence.dll
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Persistence\obj\Debug\netstandard2.1\TDDxUnitCore.Persistence.pdb

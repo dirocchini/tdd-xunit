@@ -18,7 +18,7 @@ namespace TDDxUnitCore.Persistence.Repositories
 
         public Course GetByName(string name)
         {
-            var entity = _context.Set<Course>().Where(c => c.Name.Contains(name, StringComparison.CurrentCultureIgnoreCase));
+            var entity = _context.Set<Course>().Where(c => c.Name.ToLower().Trim().Contains(name.Trim().ToLower()));
 
             if (entity.Any())
                 return entity.First();

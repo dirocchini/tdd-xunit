@@ -1,10 +1,12 @@
-﻿namespace TDDxUnitCore.Domain.Courses
+﻿using TDDxUnitCore.Domain._Base;
+
+namespace TDDxUnitCore.Domain.Courses
 {
-    public class DTOCourse
+    public class DTOCourse : Entity
     {
         public DTOCourse()
         {
-                
+
         }
         public DTOCourse(string name, string description, double workload, string audience, double cost)
         {
@@ -14,10 +16,19 @@
             Audience = audience;
             Cost = cost;
         }
-        public string Name { get; private set; }
-        public string Description { get; private set; }
-        public double Workload { get; private set; }
+        public DTOCourse(int id, string name, string description, double workload, string audience, double cost)
+        {
+            Id = id;
+            Name = name;
+            Description = description;
+            Workload = workload;
+            Audience = audience;
+            Cost = cost;
+        }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public double Workload { get; set; }
         public string Audience { get; set; }
-        public double Cost { get; private set; }
+        public double Cost { get; set; }
     }
 }

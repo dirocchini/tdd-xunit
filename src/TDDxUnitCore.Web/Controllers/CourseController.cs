@@ -19,18 +19,21 @@ namespace TDDxUnitCore.Web.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(_courseService.GetAll());
         }
 
-        public IActionResult Create()
+        public IActionResult CreateOrEdit(int id)
         {
-            return View(new DTOCourse());
+            if(id == 0)
+                return View(new DTOCourse());
+
+            return View(_courseService.Get(id));
         }
 
         [HttpPost]
-        public IActionResult Create(DTOCourse model)
+        public IActionResult Create(DTOCourse course)
         {
-            _courseService.Save(model);
+            _courseService.Save(course);
             return View();
         }
     }

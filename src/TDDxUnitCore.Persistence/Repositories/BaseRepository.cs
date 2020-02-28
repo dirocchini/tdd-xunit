@@ -17,6 +17,11 @@ namespace TDDxUnitCore.Persistence.Repositories
             _context = context;
         }
 
+        public TEntity Get(int id)
+        {
+            return _context.Set<TEntity>().FirstOrDefault(entity => entity.Id == id);
+        }
+
         public void Add(TEntity entity) => _context.Set<TEntity>().Add(entity);
 
         public TEntity GetById(int id)
