@@ -110,6 +110,29 @@ namespace TDDxUnitCore.Domain.Test.Courses
                 .WithMessage("Enter a valid cost (greater than zero)");
         }
 
+        [Fact]
+        public void ChangeWorkload_MustChange_CourseWithChangedWorkload()
+        {
+            var newValidWorkload = _faker.Random.Double(100, 2341);
+            var course = BuilderCourse.New().Build();
+
+            course.ChangeWorkload(newValidWorkload);
+
+            Assert.Equal(newValidWorkload, course.Workload);
+        }
+
+
+        [Theory(DisplayName = "ChangeWorkload_MustBeValidWorkload_Exception")]
+        [InlineData(0)]
+        [InlineData(-1233)]
+        public void ChangeWorkload_MustBeValidWorkload_Exception(double invalidWorkload)
+        {
+            var course = BuilderCourse.New().Build();
+
+            Assert.Throws<DomainCustomException>(()=> course.ChangeWorkload(invalidWorkload))
+                .WithMessage("Enter a valid workload (greater than zero)");
+        }
+
         ////OLD
         //[Theory(DisplayName = "MustHavePositiveCost")]
         //[InlineData(0)]

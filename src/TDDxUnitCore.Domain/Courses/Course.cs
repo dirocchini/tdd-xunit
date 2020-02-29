@@ -50,5 +50,16 @@ namespace TDDxUnitCore.Domain.Courses
 
             Cost = newCost;
         }
+
+        public void ChangeWorkload(double newWorkload)
+        {
+            RulerValidator.New()
+                .When(newWorkload <= 0, "Enter a valid workload (greater than zero)")
+                .ThrowException();
+
+            Workload = newWorkload;
+        }
     }
 }
+
+
