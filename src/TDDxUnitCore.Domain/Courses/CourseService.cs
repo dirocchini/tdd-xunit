@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TDDxUnitCore.Domain._Base;
 
 namespace TDDxUnitCore.Domain.Courses
 {
@@ -15,11 +16,11 @@ namespace TDDxUnitCore.Domain.Courses
         public void Save(DTOCourse dtoCourse)
         {
             var courseAlreadySaved = _courseRepository.GetByName(dtoCourse.Name);
-            if(courseAlreadySaved != null)
-                throw new ArgumentException("Course Name Already Used by Another Course");
 
-            if(!Enum.TryParse<Audience>(dtoCourse.Audience, out var audience))
-                throw new ArgumentException("Must Enter a Valid Audience");
+            RulerValidator.New()
+                .When(courseAlreadySaved != null, "Course Name Already Used by Another Course")
+                .When(!Enum.TryParse<Audience>(dtoCourse.Audience, out var audience), "Must Enter a Valid Audience")
+                .ThrowException();
 
             var course = new Course(dtoCourse.Name, dtoCourse.Description, dtoCourse.Workload, audience, dtoCourse.Cost);
 

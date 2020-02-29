@@ -1,6 +1,7 @@
 ﻿using Bogus;
 using Moq;
 using System;
+using TDDxUnitCore.Domain._Base;
 using TDDxUnitCore.Domain.Courses;
 using Xunit;
 using TDDxUnitCore.Domain.Test._Tooling;
@@ -55,7 +56,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
             var invalidAudience = "medics";
             _dtoCourse.Audience = invalidAudience;
 
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<DomainCustomException>(() =>
                 _courseService.Save(_dtoCourse)).WithMessage("Must Enter a Valid Audience");
         }
 
@@ -65,7 +66,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
             var courseAlreadySaved = BuilderCourse.New().WithName(_dtoCourse.Name).Build();
             _courseRepositoryMock.Setup(r => r.GetByName(_dtoCourse.Name)).Returns(courseAlreadySaved);
 
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<DomainCustomException>(() =>
                 _courseService.Save(_dtoCourse)).WithMessage("Course Name Already Used by Another Course");
         }
     }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using TDDxUnitCore.Domain._Base;
 
 namespace TDDxUnitCore.Web.Filters
 {
@@ -15,9 +16,10 @@ namespace TDDxUnitCore.Web.Filters
             if (isAjaxCall)
             {
                 context.HttpContext.Response.ContentType = "application/json";
-                context.HttpContext.Response.StatusCode = 500;
-                var message = context.Exception is ArgumentException ? context.Exception.Message : "An error ocurred";
-                context.Result = new JsonResult(message);
+                context.HttpContext.Response.StatusCode = context.Exception is DomainCustomException ? 502 : 500;
+                context.Result = context.Exception is DomainCustomException domain
+                    ? new JsonResult(domain.ErrorMessages)
+                    : new JsonResult("An error occurred");
                 context.ExceptionHandled = true;
             }
 

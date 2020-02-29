@@ -1,5 +1,6 @@
 ﻿using ExpectedObjects;
 using System;
+using TDDxUnitCore.Domain._Base;
 using Xunit;
 using TDDxUnitCore.Domain.Test._Tooling;
 using Xunit.Abstractions;
@@ -34,7 +35,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
         [InlineData(null)]
         public void MustHaveValidName(string invalidName)
         {
-            Assert.Throws<ArgumentException>(() => BuilderCourse.New().WithName(invalidName).Build())
+            Assert.Throws<DomainCustomException>(() => BuilderCourse.New().WithName(invalidName).Build())
                 .WithMessage("Enter a valid name (not empty or null)");
         }
 
@@ -44,7 +45,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
         [InlineData(-299.50)]
         public void MustHavePositiveHours(double invalidWorkload)
         {
-            Assert.Throws<ArgumentException>(() => BuilderCourse.New().WithWorkload(invalidWorkload).Build())
+            Assert.Throws<DomainCustomException>(() => BuilderCourse.New().WithWorkload(invalidWorkload).Build())
                 .WithMessage("Enter a valid workload (greater than zero)");
         }
 
@@ -55,8 +56,20 @@ namespace TDDxUnitCore.Domain.Test.Courses
         [InlineData(-299.50)]
         public void MustHavePositiveCost(double invalidCost)
         {
-            Assert.Throws<ArgumentException>(() => BuilderCourse.New().WithCost(invalidCost).Build())
+            Assert.Throws<DomainCustomException>(() => BuilderCourse.New().WithCost(invalidCost).Build())
                 .WithMessage("Enter a valid cost (greater than zero)");
         }
+
+
+        ////OLD
+        //[Theory(DisplayName = "MustHavePositiveCost")]
+        //[InlineData(0)]
+        //[InlineData(-1.9)]
+        //[InlineData(-299.50)]
+        //public void MustHavePositiveCost(double invalidCost)
+        //{
+        //    Assert.Throws<ArgumentException>(() => BuilderCourse.New().WithCost(invalidCost).Build())
+        //        .WithMessage("Enter a valid cost (greater than zero)");
+        //}
     }
 }

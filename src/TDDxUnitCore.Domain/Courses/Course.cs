@@ -20,14 +20,11 @@ namespace TDDxUnitCore.Domain.Courses
 
         private void Validate()
         {
-            if (string.IsNullOrEmpty(Name))
-                throw new ArgumentException("Enter a valid name (not empty or null)");
-
-            if (Workload <= 0)
-                throw new ArgumentException("Enter a valid workload (greater than zero)");
-
-            if (Cost <= 0)
-                throw new ArgumentException("Enter a valid cost (greater than zero)");
+            RulerValidator.New()
+                .When(string.IsNullOrEmpty(Name), "Enter a valid name (not empty or null)")
+                .When(Workload <= 0, "Enter a valid workload (greater than zero)")
+                .When(Cost <= 0, "Enter a valid cost (greater than zero)")
+                .ThrowException();
         }
 
         public string Name { get; private set; }
