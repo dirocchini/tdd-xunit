@@ -7422,9 +7422,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\test\\TDDxUnitCore.Domain.Test\\TDDxUnitCore.Domain.Test.csproj",
-      "projectName": "TDDxUnitCore.Domain.Test",
-      "projectPath": "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\test\\TDDxUnitCore.Domain.Test\\TDDxUnitCore.Domain.Test.csproj",
+      "projectUniqueName": "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\test\\TDDxUnitCore.Domain.Test\\TDDxUnitCore.Domain.UnitTest.csproj",
+      "projectName": "TDDxUnitCore.Domain.UnitTest",
+      "projectPath": "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\test\\TDDxUnitCore.Domain.Test\\TDDxUnitCore.Domain.UnitTest.csproj",
       "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
       "outputPath": "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\test\\TDDxUnitCore.Domain.Test\\obj\\",
       "projectStyle": "PackageReference",

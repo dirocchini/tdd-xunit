@@ -1,5 +1,7 @@
 ﻿using ExpectedObjects;
 using System;
+using System.Collections.Immutable;
+using Bogus;
 using TDDxUnitCore.Domain._Base;
 using Xunit;
 using TDDxUnitCore.Domain.Test._Tooling;
@@ -13,10 +15,14 @@ namespace TDDxUnitCore.Domain.Test.Courses
     {
         private readonly ITestOutputHelper _output;
 
+        private readonly Faker _faker;
+
+
         public CourseTest(ITestOutputHelper output)
         {
             _output = output;
             _output.WriteLine("Constructor called");
+            _faker = new Faker();
         }
 
         [Fact(DisplayName = "MustCreateCourse")]
@@ -60,6 +66,49 @@ namespace TDDxUnitCore.Domain.Test.Courses
                 .WithMessage("Enter a valid cost (greater than zero)");
         }
 
+        [Fact(DisplayName = "ChangeName_MustChange_CourseWithChangedName")]
+        public void ChangeName_MustChange_ChangedName()
+        {
+            var newValidNameName = _faker.Person.FullName;
+            var course = BuilderCourse.New().Build();
+
+            course.ChangeName(newValidNameName);
+
+            Assert.Equal(newValidNameName, course.Name);
+        }
+
+        [Theory(DisplayName = "ChangeName_MustBeValidName_Exception")]
+        [InlineData("")]
+        [InlineData(null)]
+        public void ChangeName_MustBeValidName_Exception(string invalidName)
+        {
+            var course = BuilderCourse.New().Build();
+
+            Assert.Throws<DomainCustomException>(()=> course.ChangeName(invalidName))
+                .WithMessage("Enter a valid name (not empty or null)");
+        }
+
+
+        [Fact(DisplayName = "ChangeCost_MustChange_CourseWithChangedCost")]
+        public void ChangeCost_MustChange_CourseWithChangedCost()
+        {
+            var newValidCost = _faker.Random.Double(10, 4000);
+            var course = BuilderCourse.New().Build();
+            
+            course.ChangeCost(newValidCost);
+            
+            Assert.Equal(newValidCost, course.Cost);
+        }
+
+        [Theory(DisplayName = "ChangeCost_MustBeValidCost_Exception")]
+        [InlineData(0)]
+        [InlineData(-123)]
+        public void ChangeCost_MustBeValidCost_Exception(double invalidCost)
+        {
+            var course = BuilderCourse.New().Build();
+            Assert.Throws<DomainCustomException>(() => course.ChangeCost(invalidCost))
+                .WithMessage("Enter a valid cost (greater than zero)");
+        }
 
         ////OLD
         //[Theory(DisplayName = "MustHavePositiveCost")]

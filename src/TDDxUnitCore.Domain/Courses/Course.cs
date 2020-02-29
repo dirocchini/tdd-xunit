@@ -32,5 +32,23 @@ namespace TDDxUnitCore.Domain.Courses
         public double Workload { get; private set; }
         public Audience Audience { get; private set; }
         public double Cost { get; private set; }
+
+        public void ChangeName(string newName)
+        {
+            RulerValidator.New()
+                .When(string.IsNullOrEmpty(newName), "Enter a valid name (not empty or null)")
+                .ThrowException();
+            
+            Name = newName;
+        }
+
+        public void ChangeCost(double newCost)
+        {
+            RulerValidator.New()
+                .When(newCost <= 0, "Enter a valid cost (greater than zero)")
+                .ThrowException();
+
+            Cost = newCost;
+        }
     }
 }

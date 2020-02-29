@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDDxUnitCore.Domain.Test", "test\TDDxUnitCore.Domain.Test\TDDxUnitCore.Domain.Test.csproj", "{72BF80D2-F538-4D60-99AD-8EB154FD6F1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDDxUnitCore.Domain.UnitTest", "test\TDDxUnitCore.Domain.Test\TDDxUnitCore.Domain.UnitTest.csproj", "{72BF80D2-F538-4D60-99AD-8EB154FD6F1D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDDxUnitCore.Domain", "src\TDDxUnitCore.Domain\TDDxUnitCore.Domain.csproj", "{635FBDFC-190B-460B-980A-D5296EDD8C1E}"
 EndProject
@@ -11,11 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "code", "code", "{1E2B81CC-8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{5FD70E6F-72F1-4379-8111-FD42FDFB6626}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDxUnitCore.Web", "src\TDDxUnitCore.Web\TDDxUnitCore.Web.csproj", "{FB3415AB-4C27-488D-8551-A18B5564DE71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDDxUnitCore.Web", "src\TDDxUnitCore.Web\TDDxUnitCore.Web.csproj", "{FB3415AB-4C27-488D-8551-A18B5564DE71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDxUnitCore.Persistence", "src\TDDxUnitCore.Persistence\TDDxUnitCore.Persistence.csproj", "{E792D2F2-3895-4245-B4D8-593BA53A34A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDDxUnitCore.Persistence", "src\TDDxUnitCore.Persistence\TDDxUnitCore.Persistence.csproj", "{E792D2F2-3895-4245-B4D8-593BA53A34A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDxUnitCore.IoC", "src\TDDxUnitCore.IoC\TDDxUnitCore.IoC.csproj", "{34595CC7-3C1A-442D-852D-C01789A6712C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDDxUnitCore.IoC", "src\TDDxUnitCore.IoC\TDDxUnitCore.IoC.csproj", "{34595CC7-3C1A-442D-852D-C01789A6712C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{AD4A50C9-9AC1-4781-A749-C3C7BB6BBFBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,11 +50,12 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{72BF80D2-F538-4D60-99AD-8EB154FD6F1D} = {5FD70E6F-72F1-4379-8111-FD42FDFB6626}
+		{72BF80D2-F538-4D60-99AD-8EB154FD6F1D} = {AD4A50C9-9AC1-4781-A749-C3C7BB6BBFBC}
 		{635FBDFC-190B-460B-980A-D5296EDD8C1E} = {1E2B81CC-8802-4072-9CE9-AD81E6B6CB99}
 		{FB3415AB-4C27-488D-8551-A18B5564DE71} = {1E2B81CC-8802-4072-9CE9-AD81E6B6CB99}
 		{E792D2F2-3895-4245-B4D8-593BA53A34A4} = {1E2B81CC-8802-4072-9CE9-AD81E6B6CB99}
 		{34595CC7-3C1A-442D-852D-C01789A6712C} = {1E2B81CC-8802-4072-9CE9-AD81E6B6CB99}
+		{AD4A50C9-9AC1-4781-A749-C3C7BB6BBFBC} = {5FD70E6F-72F1-4379-8111-FD42FDFB6626}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {20D6A9D2-66A7-4A8E-A663-7A17AE0F44F0}
