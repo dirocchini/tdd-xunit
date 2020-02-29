@@ -21,9 +21,9 @@ namespace TDDxUnitCore.Domain.Courses
         private void Validate()
         {
             RulerValidator.New()
-                .When(string.IsNullOrEmpty(Name), "Enter a valid name (not empty or null)")
-                .When(Workload <= 0, "Enter a valid workload (greater than zero)")
-                .When(Cost <= 0, "Enter a valid cost (greater than zero)")
+                .When(string.IsNullOrEmpty(Name), Resources.InvalidName)
+                .When(Workload <= 0, Resources.InvalidWorkload)
+                .When(Cost <= 0, Resources.InvalidCost)
                 .ThrowException();
         }
 
@@ -36,7 +36,7 @@ namespace TDDxUnitCore.Domain.Courses
         public void ChangeName(string newName)
         {
             RulerValidator.New()
-                .When(string.IsNullOrEmpty(newName), "Enter a valid name (not empty or null)")
+                .When(string.IsNullOrEmpty(newName), Resources.InvalidName)
                 .ThrowException();
             
             Name = newName;
@@ -45,7 +45,7 @@ namespace TDDxUnitCore.Domain.Courses
         public void ChangeCost(double newCost)
         {
             RulerValidator.New()
-                .When(newCost <= 0, "Enter a valid cost (greater than zero)")
+                .When(newCost <= 0, Resources.InvalidCost)
                 .ThrowException();
 
             Cost = newCost;
@@ -54,7 +54,7 @@ namespace TDDxUnitCore.Domain.Courses
         public void ChangeWorkload(double newWorkload)
         {
             RulerValidator.New()
-                .When(newWorkload <= 0, "Enter a valid workload (greater than zero)")
+                .When(newWorkload <= 0, Resources.InvalidWorkload)
                 .ThrowException();
 
             Workload = newWorkload;

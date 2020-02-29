@@ -13,15 +13,10 @@ namespace TDDxUnitCore.Domain.Test.Courses
 {
     public class CourseTest
     {
-        private readonly ITestOutputHelper _output;
-
         private readonly Faker _faker;
 
-
-        public CourseTest(ITestOutputHelper output)
+        public CourseTest()
         {
-            _output = output;
-            _output.WriteLine("Constructor called");
             _faker = new Faker();
         }
 
@@ -42,17 +37,17 @@ namespace TDDxUnitCore.Domain.Test.Courses
         public void MustHaveValidName(string invalidName)
         {
             Assert.Throws<DomainCustomException>(() => BuilderCourse.New().WithName(invalidName).Build())
-                .WithMessage("Enter a valid name (not empty or null)");
+                .WithMessage(Resources.InvalidName);
         }
 
-        [Theory(DisplayName = "MustHavePositiveHours")]
+        [Theory(DisplayName = "MustHavePositiveWorkload")]
         [InlineData(0)]
         [InlineData(-1.9)]
         [InlineData(-299.50)]
-        public void MustHavePositiveHours(double invalidWorkload)
+        public void MustHavePositiveWorkload(double invalidWorkload)
         {
             Assert.Throws<DomainCustomException>(() => BuilderCourse.New().WithWorkload(invalidWorkload).Build())
-                .WithMessage("Enter a valid workload (greater than zero)");
+                .WithMessage(Resources.InvalidWorkload);
         }
 
 
@@ -63,7 +58,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
         public void MustHavePositiveCost(double invalidCost)
         {
             Assert.Throws<DomainCustomException>(() => BuilderCourse.New().WithCost(invalidCost).Build())
-                .WithMessage("Enter a valid cost (greater than zero)");
+                .WithMessage(Resources.InvalidCost);
         }
 
         [Fact(DisplayName = "ChangeName_MustChange_CourseWithChangedName")]
@@ -85,7 +80,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
             var course = BuilderCourse.New().Build();
 
             Assert.Throws<DomainCustomException>(()=> course.ChangeName(invalidName))
-                .WithMessage("Enter a valid name (not empty or null)");
+                .WithMessage(Resources.InvalidName);
         }
 
 
@@ -107,7 +102,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
         {
             var course = BuilderCourse.New().Build();
             Assert.Throws<DomainCustomException>(() => course.ChangeCost(invalidCost))
-                .WithMessage("Enter a valid cost (greater than zero)");
+                .WithMessage(Resources.InvalidCost);
         }
 
         [Fact]
@@ -130,7 +125,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
             var course = BuilderCourse.New().Build();
 
             Assert.Throws<DomainCustomException>(()=> course.ChangeWorkload(invalidWorkload))
-                .WithMessage("Enter a valid workload (greater than zero)");
+                .WithMessage(Resources.InvalidWorkload);
         }
 
         ////OLD
