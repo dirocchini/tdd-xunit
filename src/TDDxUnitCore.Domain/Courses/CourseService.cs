@@ -18,7 +18,7 @@ namespace TDDxUnitCore.Domain.Courses
             var courseAlreadySaved = _courseRepository.GetByName(dtoCourse.Name);
 
             RulerValidator.New()
-                .When(courseAlreadySaved != null, Resources.NameAlreadyUsed)
+                .When(courseAlreadySaved != null && courseAlreadySaved.Id != dtoCourse.Id, Resources.NameAlreadyUsed)
                 .When(!Enum.TryParse<Audience>(dtoCourse.Audience, out var audience), Resources.InvalidAudience)
                 .ThrowException();
 

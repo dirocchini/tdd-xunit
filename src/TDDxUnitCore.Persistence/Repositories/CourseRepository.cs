@@ -24,7 +24,7 @@ namespace TDDxUnitCore.Persistence.Repositories
                 return null;
                 
 
-            var entity = _context.Set<Course>().Where(c => c.Name.ToLower().Trim().Contains(name.Trim().ToLower()));
+            var entity = _context.Set<Course>().Where(c => c.Name.ToLower().Trim().Equals(name.Trim().ToLower()));
 
             if (entity.Any())
                 return entity.First();

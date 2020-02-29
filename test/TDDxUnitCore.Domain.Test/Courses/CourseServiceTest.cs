@@ -64,6 +64,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
         public void MustAddAUniqueCourseName()
         {
             var courseAlreadySaved = BuilderCourse.New().WithName(_dtoCourse.Name).Build();
+            _dtoCourse.Id = 1;
             _courseRepositoryMock.Setup(r => r.GetByName(_dtoCourse.Name)).Returns(courseAlreadySaved);
 
             Assert.Throws<DomainCustomException>(() =>
