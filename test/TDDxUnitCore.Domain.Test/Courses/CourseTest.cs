@@ -20,7 +20,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
             _faker = new Faker();
         }
 
-        [Fact(DisplayName = "MustCreateCourse")]
+        [Fact]
         public void MustCreateCourse()
         {
             var expectedCourse = BuilderCourse.New().Build();
@@ -31,7 +31,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
             expectedCourse.ToExpectedObject().ShouldMatch(course);
         }
 
-        [Theory(DisplayName = "MustHaveValidName")]
+        [Theory]
         [InlineData("")]
         [InlineData(null)]
         public void MustHaveValidName(string invalidName)
@@ -40,7 +40,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
                 .WithMessage(Resources.InvalidName);
         }
 
-        [Theory(DisplayName = "MustHavePositiveWorkload")]
+        [Theory]
         [InlineData(0)]
         [InlineData(-1.9)]
         [InlineData(-299.50)]
@@ -51,7 +51,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
         }
 
 
-        [Theory(DisplayName = "MustHavePositiveCost")]
+        [Theory]
         [InlineData(0)]
         [InlineData(-1.9)]
         [InlineData(-299.50)]
@@ -61,7 +61,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
                 .WithMessage(Resources.InvalidCost);
         }
 
-        [Fact(DisplayName = "ChangeName_MustChange_CourseWithChangedName")]
+        [Fact]
         public void ChangeName_MustChange_ChangedName()
         {
             var newValidNameName = _faker.Person.FullName;
@@ -72,7 +72,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
             Assert.Equal(newValidNameName, course.Name);
         }
 
-        [Theory(DisplayName = "ChangeName_MustBeValidName_Exception")]
+        [Theory]
         [InlineData("")]
         [InlineData(null)]
         public void ChangeName_MustBeValidName_Exception(string invalidName)
@@ -84,7 +84,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
         }
 
 
-        [Fact(DisplayName = "ChangeCost_MustChange_CourseWithChangedCost")]
+        [Fact]
         public void ChangeCost_MustChange_CourseWithChangedCost()
         {
             var newValidCost = _faker.Random.Double(10, 4000);
@@ -95,7 +95,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
             Assert.Equal(newValidCost, course.Cost);
         }
 
-        [Theory(DisplayName = "ChangeCost_MustBeValidCost_Exception")]
+        [Theory]
         [InlineData(0)]
         [InlineData(-123)]
         public void ChangeCost_MustBeValidCost_Exception(double invalidCost)
@@ -117,7 +117,7 @@ namespace TDDxUnitCore.Domain.Test.Courses
         }
 
 
-        [Theory(DisplayName = "ChangeWorkload_MustBeValidWorkload_Exception")]
+        [Theory]
         [InlineData(0)]
         [InlineData(-1233)]
         public void ChangeWorkload_MustBeValidWorkload_Exception(double invalidWorkload)
@@ -127,16 +127,5 @@ namespace TDDxUnitCore.Domain.Test.Courses
             Assert.Throws<DomainCustomException>(()=> course.ChangeWorkload(invalidWorkload))
                 .WithMessage(Resources.InvalidWorkload);
         }
-
-        ////OLD
-        //[Theory(DisplayName = "MustHavePositiveCost")]
-        //[InlineData(0)]
-        //[InlineData(-1.9)]
-        //[InlineData(-299.50)]
-        //public void MustHavePositiveCost(double invalidCost)
-        //{
-        //    Assert.Throws<ArgumentException>(() => BuilderCourse.New().WithCost(invalidCost).Build())
-        //        .WithMessage("Enter a valid cost (greater than zero)");
-        //}
     }
 }

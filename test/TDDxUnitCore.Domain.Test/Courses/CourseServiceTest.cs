@@ -31,14 +31,14 @@ namespace TDDxUnitCore.Domain.Test.Courses
 
         }
 
-        [Fact(DisplayName = "MustCallAddCourse")]
+        [Fact]
         public void MustCallAddCourse()
         {
             _courseService.Save(_dtoCourse);
             _courseRepositoryMock.Verify(r => r.Add(It.IsAny<Course>()));
         }
 
-        [Fact(DisplayName = "MustAddCourseEqualsToDto")]
+        [Fact]
         public void MustAddCourseEqualsToDto()
         {
             _courseService.Save(_dtoCourse);
@@ -50,24 +50,24 @@ namespace TDDxUnitCore.Domain.Test.Courses
             ));
         }
 
-        [Fact(DisplayName = "ShouldAddValidAudience")]
+        [Fact]
         public void ShouldAddValidAudience()
         {
             var invalidAudience = "medics";
             _dtoCourse.Audience = invalidAudience;
 
             Assert.Throws<DomainCustomException>(() =>
-                _courseService.Save(_dtoCourse)).WithMessage("Must Enter a Valid Audience");
+                _courseService.Save(_dtoCourse)).WithMessage(Resources.InvalidAudience);
         }
 
-        [Fact(DisplayName = "MustAddAUniqueCourseName")]
+        [Fact]
         public void MustAddAUniqueCourseName()
         {
             var courseAlreadySaved = BuilderCourse.New().WithName(_dtoCourse.Name).Build();
             _courseRepositoryMock.Setup(r => r.GetByName(_dtoCourse.Name)).Returns(courseAlreadySaved);
 
             Assert.Throws<DomainCustomException>(() =>
-                _courseService.Save(_dtoCourse)).WithMessage("Course Name Already Used by Another Course");
+                _courseService.Save(_dtoCourse)).WithMessage(Resources.NameAlreadyUsed);
         }
     }
 }
