@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +12,8 @@ namespace TDDxUnitCore.Persistence.Contexts
     {
         public TddXUnitContext(DbContextOptions<TddXUnitContext> options) : base(options)
         {
-                
+            if (Database.GetPendingMigrations().Count() > 0)
+                Database.Migrate();
         }
 
         public DbSet<Course> Courses { get; set; }

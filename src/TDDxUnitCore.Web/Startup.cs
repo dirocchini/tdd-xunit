@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TDDxUnitCore.Domain._Base;
 using TDDxUnitCore.IoC;
+using TDDxUnitCore.Web.Filters;
 
 namespace TDDxUnitCore.Web
 {
@@ -28,7 +29,7 @@ namespace TDDxUnitCore.Web
 
             StartupIoC.ConfigureServices(services, Configuration);
 
-            services.AddMvc()
+            services.AddMvc(config => { config.Filters.Add(typeof(CustomExceptionFilter)); })
                 .AddRazorRuntimeCompilation();
         }
 
@@ -45,14 +46,17 @@ namespace TDDxUnitCore.Web
 
 
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
+            //if (env.IsDevelopment())
+            //{
+            //    app.UseDeveloperExceptionPage();
+            //}
+            //else
+            //{
+            //    app.UseExceptionHandler("/Home/Error");
+            //}
+
+            app.UseDeveloperExceptionPage();
+
             app.UseStaticFiles();
 
             app.UseRouting();
