@@ -2,7 +2,7 @@
 
 namespace TDDxUnitCore.Domain.Courses
 {
-    public class DTOCourse : Entity
+    public class DTOCourse 
     {
         public DTOCourse()
         {
@@ -25,6 +25,7 @@ namespace TDDxUnitCore.Domain.Courses
             Audience = audience;
             Cost = cost;
         }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public double Workload { get; set; }

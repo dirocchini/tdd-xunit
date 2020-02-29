@@ -69,5 +69,31 @@ namespace TDDxUnitCore.Domain.Test.Courses
             Assert.Throws<DomainCustomException>(() =>
                 _courseService.Save(_dtoCourse)).WithMessage(Resources.NameAlreadyUsed);
         }
+
+        [Fact]
+        public void UpdateCourse_ChangeCourseProps_UpdatedCourse()
+        {
+            _dtoCourse.Id = 555;
+            var course = BuilderCourse.New().Build();
+            _courseRepositoryMock.Setup(r => r.GetById(555)).Returns(course);
+
+            _courseService.Save(_dtoCourse);
+
+            Assert.Equal(_dtoCourse.Name, course.Name);
+            Assert.Equal(_dtoCourse.Cost, course.Cost);
+            Assert.Equal(_dtoCourse.Workload, course.Workload);
+        }
+
+        [Fact]
+        public void UpdateCourse_MustNotCallAdd_Exception()
+        {
+            _dtoCourse.Id = 555;
+            var course = BuilderCourse.New().Build();
+            _courseRepositoryMock.Setup(r => r.GetById(555)).Returns(course);
+
+            _courseService.Save(_dtoCourse);
+
+            _courseRepositoryMock.Verify(r => r.Add(It.IsAny<Course>()), Times.Never);
+        }
     }
 }

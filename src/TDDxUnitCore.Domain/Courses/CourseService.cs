@@ -24,7 +24,16 @@ namespace TDDxUnitCore.Domain.Courses
 
             var course = new Course(dtoCourse.Name, dtoCourse.Description, dtoCourse.Workload, audience, dtoCourse.Cost);
 
-            _courseRepository.Add(course);
+            if (dtoCourse.Id > 0)
+            {
+                var courseFromDb = _courseRepository.GetById(dtoCourse.Id);
+                courseFromDb.ChangeName(dtoCourse.Name);
+                courseFromDb.ChangeWorkload(dtoCourse.Workload);
+                courseFromDb.ChangeCost(dtoCourse.Cost);
+            }
+
+            if (dtoCourse.Id == 0)
+                _courseRepository.Add(course);
         }
 
         public List<DTOCourse> GetAll()
@@ -32,7 +41,7 @@ namespace TDDxUnitCore.Domain.Courses
             var courses = _courseRepository.Get();
             List<DTOCourse> dtoCourses = new List<DTOCourse>();
 
-            courses.ForEach(c => 
+            courses.ForEach(c =>
                     dtoCourses.Add(new DTOCourse(c.Id, c.Name, c.Description, c.Workload, c.Audience.ToString(), c.Cost))
                 );
 
