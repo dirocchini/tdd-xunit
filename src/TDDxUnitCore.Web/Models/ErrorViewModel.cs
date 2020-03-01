@@ -1,5 +1,3 @@
-using System;
-
 namespace TDDxUnitCore.Web.Models
 {
     public class ErrorViewModel

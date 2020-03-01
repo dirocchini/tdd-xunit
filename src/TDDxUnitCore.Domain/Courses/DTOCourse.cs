@@ -1,6 +1,4 @@
-﻿using TDDxUnitCore.Domain._Base;
-
-namespace TDDxUnitCore.Domain.Courses
+﻿namespace TDDxUnitCore.Domain.Courses
 {
     public class DTOCourse 
     {

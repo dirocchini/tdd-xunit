@@ -1,15 +1,12 @@
-﻿using ExpectedObjects;
-using System;
-using System.Collections.Immutable;
-using Bogus;
+﻿using Bogus;
+using ExpectedObjects;
 using TDDxUnitCore.Domain._Base;
-using Xunit;
-using TDDxUnitCore.Domain.Test._Tooling;
-using Xunit.Abstractions;
-using TDDxUnitCore.Domain.Test._Builders;
 using TDDxUnitCore.Domain.Courses;
+using TDDxUnitCore.Domain.Test._Builders;
+using TDDxUnitCore.Domain.Test._Tooling;
+using Xunit;
 
-namespace TDDxUnitCore.Domain.Test.Courses
+namespace TDDxUnitCore.Domain.UnitTest.Courses
 {
     public class CourseTest
     {

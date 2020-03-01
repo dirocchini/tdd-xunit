@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using TDDxUnitCore.Domain._Base;
+﻿using TDDxUnitCore.Domain._Base;
 using Xunit;
 
 namespace TDDxUnitCore.Domain.Test._Tooling

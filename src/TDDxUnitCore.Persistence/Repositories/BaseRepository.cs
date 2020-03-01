@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using TDDxUnitCore.Domain._Base;
-using TDDxUnitCore.Domain.Courses;
 using TDDxUnitCore.Persistence.Contexts;
 
 namespace TDDxUnitCore.Persistence.Repositories

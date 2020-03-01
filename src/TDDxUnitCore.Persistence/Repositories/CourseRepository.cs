@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
+﻿using System.Linq;
 using TDDxUnitCore.Domain.Courses;
 using TDDxUnitCore.Persistence.Contexts;
 

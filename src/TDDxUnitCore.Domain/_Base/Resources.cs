@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TDDxUnitCore.Domain._Base
+﻿namespace TDDxUnitCore.Domain._Base
 {
     public static class Resources
     {
@@ -11,5 +7,7 @@ namespace TDDxUnitCore.Domain._Base
         public static string InvalidCost = "Enter a valid cost (greater than zero)";
         public static string InvalidAudience = "Must Enter a Valid Audience";
         public static string NameAlreadyUsed = "Name Already Used by Another";
+        public static string InvalidDocument = "Must have a valid document (CPF)";
+        public static string InvalidEmail = "Must have a valid email";
     }
 }

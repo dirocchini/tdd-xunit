@@ -1,9 +1,5 @@
 ﻿using Bogus;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using TDDxUnitCore.Domain.Courses;
-using TDDxUnitCore.Domain.Test.Courses;
 
 namespace TDDxUnitCore.Domain.Test._Builders
 {

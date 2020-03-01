@@ -1,13 +1,13 @@
-﻿using Bogus;
+﻿using System;
+using Bogus;
 using Moq;
-using System;
 using TDDxUnitCore.Domain._Base;
 using TDDxUnitCore.Domain.Courses;
-using Xunit;
-using TDDxUnitCore.Domain.Test._Tooling;
 using TDDxUnitCore.Domain.Test._Builders;
+using TDDxUnitCore.Domain.Test._Tooling;
+using Xunit;
 
-namespace TDDxUnitCore.Domain.Test.Courses
+namespace TDDxUnitCore.Domain.UnitTest.Courses
 {
     public class CourseServiceTest
     {
