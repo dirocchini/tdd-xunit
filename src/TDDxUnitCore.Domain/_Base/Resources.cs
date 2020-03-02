@@ -9,5 +9,6 @@
         public static string NameAlreadyUsed = "Name Already Used by Another";
         public static string InvalidDocument = "Must have a valid document (CPF)";
         public static string InvalidEmail = "Must have a valid email";
+        public static string EmailAlreadyTaken = "Email Already Used";
     }
 }
