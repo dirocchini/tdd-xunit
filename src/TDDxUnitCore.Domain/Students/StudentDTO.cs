@@ -1,6 +1,4 @@
-﻿using TDDxUnitCore.Domain.Courses;
-
-namespace TDDxUnitCore.Domain.Students
+﻿namespace TDDxUnitCore.Domain.Students
 {
     public class StudentDTO
     {

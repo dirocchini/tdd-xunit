@@ -20,7 +20,7 @@ namespace TDDxUnitCore.Domain.UnitTest.Students
         [Fact]
         public void MustCreateStudent()
         {
-            var expectedStudent = BuilderStudant.New().Build();
+            var expectedStudent = BuilderStudent.New().Build();
             var student = new Student(expectedStudent.Name, expectedStudent.Document, expectedStudent.Email, expectedStudent.Audience);
 
             expectedStudent.ToExpectedObject().ShouldMatch(student);
@@ -31,7 +31,7 @@ namespace TDDxUnitCore.Domain.UnitTest.Students
         [InlineData(null)]
         public void MustHaveValidName(string invalidName)
         {
-            Assert.Throws<DomainCustomException>(() => BuilderStudant.New().WithName(invalidName).Build())
+            Assert.Throws<DomainCustomException>(() => BuilderStudent.New().WithName(invalidName).Build())
                 .WithMessage(Resources.InvalidName);
         }
 
@@ -41,7 +41,7 @@ namespace TDDxUnitCore.Domain.UnitTest.Students
         [InlineData("654321654")]
         public void MustHaveValidCpf(string invalidDocument)
         {
-            Assert.Throws<DomainCustomException>(() => BuilderStudant.New().WithDocument(invalidDocument).Build())
+            Assert.Throws<DomainCustomException>(() => BuilderStudent.New().WithDocument(invalidDocument).Build())
                 .WithMessage(Resources.InvalidDocument);
         }
 
@@ -53,7 +53,7 @@ namespace TDDxUnitCore.Domain.UnitTest.Students
         [InlineData("teste@")]
         public void MustHaveValidEmail(string invalidEmail)
         {
-            Assert.Throws<DomainCustomException>(() => BuilderStudant.New().WithEmail(invalidEmail).Build())
+            Assert.Throws<DomainCustomException>(() => BuilderStudent.New().WithEmail(invalidEmail).Build())
                 .WithMessage(Resources.InvalidEmail);
         }
 
@@ -61,7 +61,7 @@ namespace TDDxUnitCore.Domain.UnitTest.Students
         public void ChangeName_MustChangeName_StudentWithChangedName()
         {
             var validName = _faker.Person.FullName;
-            var student = BuilderStudant.New().Build();
+            var student = BuilderStudent.New().Build();
 
             student.ChangeName(validName);
 

@@ -1,8 +1,8 @@
-﻿namespace TDDxUnitCore.Domain.Courses
+﻿namespace TDDxUnitCore.Domain.Audiences
 {
     public enum Audience
     {
-        Studant = 1,
+        Student = 1,
         NonDev = 2,
         Employee = 3,
         CTO = 4

@@ -2,6 +2,7 @@
 using Bogus;
 using Moq;
 using TDDxUnitCore.Domain._Base;
+using TDDxUnitCore.Domain.Audiences;
 using TDDxUnitCore.Domain.Courses;
 using TDDxUnitCore.Domain.Test._Builders;
 using TDDxUnitCore.Domain.Test._Tooling;
@@ -14,6 +15,7 @@ namespace TDDxUnitCore.Domain.UnitTest.Courses
         private readonly DTOCourse _dtoCourse;
         private readonly Mock<ICourseRepository> _courseRepositoryMock;
         private readonly CourseService _courseService;
+        private readonly Mock<IAudienceConverter> _audienceConverterMock;
 
         public CourseServiceTest()
         {
@@ -22,12 +24,13 @@ namespace TDDxUnitCore.Domain.UnitTest.Courses
                 faker.Random.Words()
                 , faker.Lorem.Paragraph()
                 , faker.Random.Double(5, 234)
-                , "Studant"
+                , "Student"
                 , faker.Random.Double(1000, 1231)
             );
 
             _courseRepositoryMock = new Mock<ICourseRepository>();
-            _courseService = new CourseService(_courseRepositoryMock.Object);
+            _audienceConverterMock = new Mock<IAudienceConverter>();
+            _courseService = new CourseService(_courseRepositoryMock.Object, _audienceConverterMock.Object);
 
         }
 
@@ -48,16 +51,6 @@ namespace TDDxUnitCore.Domain.UnitTest.Courses
                     c.Description.Equals(_dtoCourse.Description, StringComparison.InvariantCultureIgnoreCase)
                 )
             ));
-        }
-
-        [Fact]
-        public void ShouldAddValidAudience()
-        {
-            var invalidAudience = "medics";
-            _dtoCourse.Audience = invalidAudience;
-
-            Assert.Throws<DomainCustomException>(() =>
-                _courseService.Save(_dtoCourse)).WithMessage(Resources.InvalidAudience);
         }
 
         [Fact]

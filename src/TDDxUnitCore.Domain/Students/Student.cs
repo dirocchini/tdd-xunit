@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using TDDxUnitCore.Domain._Base;
-using TDDxUnitCore.Domain.Courses;
+using TDDxUnitCore.Domain.Audiences;
 
 namespace TDDxUnitCore.Domain.Students
 {

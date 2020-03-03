@@ -1,4 +1,5 @@
 ﻿using Bogus;
+using TDDxUnitCore.Domain.Audiences;
 using TDDxUnitCore.Domain.Courses;
 
 namespace TDDxUnitCore.Domain.Test._Builders

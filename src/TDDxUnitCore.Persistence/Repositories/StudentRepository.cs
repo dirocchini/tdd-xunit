@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TDDxUnitCore.Domain.Courses;
 using TDDxUnitCore.Domain.Students;
 using TDDxUnitCore.Persistence.Contexts;
 

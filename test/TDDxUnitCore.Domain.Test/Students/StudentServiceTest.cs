@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Bogus;
 using Bogus.Extensions.Brazil;
 using Moq;
 using TDDxUnitCore.Domain._Base;
-using TDDxUnitCore.Domain.Courses;
+using TDDxUnitCore.Domain.Audiences;
 using TDDxUnitCore.Domain.Students;
 using TDDxUnitCore.Domain.Test._Tooling;
 using TDDxUnitCore.Domain.UnitTest._Builders;
@@ -13,11 +11,12 @@ using Xunit;
 
 namespace TDDxUnitCore.Domain.UnitTest.Students
 {
-    public class StudentServiceTest
+    public partial class StudentServiceTest
     {
         private readonly StudentDTO _studentDTO;
         private readonly Mock<IStudentRepository> _studentRepositoryMock;
         private readonly StudentService _studentService;
+        private readonly Mock<IAudienceConverter> _audienceConverterMock;
 
         public StudentServiceTest()
         {
@@ -31,7 +30,8 @@ namespace TDDxUnitCore.Domain.UnitTest.Students
             );
 
             _studentRepositoryMock = new Mock<IStudentRepository>();
-            _studentService = new StudentService(_studentRepositoryMock.Object);
+            _audienceConverterMock = new Mock<IAudienceConverter>();
+            _studentService = new StudentService(_studentRepositoryMock.Object, _audienceConverterMock.Object);
         }
 
         [Fact]
@@ -54,18 +54,9 @@ namespace TDDxUnitCore.Domain.UnitTest.Students
         }
         
         [Fact]
-        public void MustAddInvalidAudience()
-        {
-            string invalidAudience = "medics";
-            _studentDTO.Audience = invalidAudience;
-
-            Assert.Throws<DomainCustomException>(() => _studentService.Save(_studentDTO)).WithMessage(Resources.InvalidAudience);
-        }
-
-        [Fact]
         public void Save_MustHaveUniqueEmail_Exception()
         {
-            var studentAlreadySaved = BuilderStudant.New().WithEmail(_studentDTO.Email).Build();
+            var studentAlreadySaved = BuilderStudent.New().WithEmail(_studentDTO.Email).Build();
             _studentDTO.Id = 1;
             _studentRepositoryMock.Setup(r => r.GetByEmail(_studentDTO.Email)).Returns(studentAlreadySaved);
 
@@ -77,7 +68,7 @@ namespace TDDxUnitCore.Domain.UnitTest.Students
         public void Save_UpdateMustNotCallAdd_CallNever()
         {
             _studentDTO.Id = 1;
-            var student = BuilderStudant.New().Build();
+            var student = BuilderStudent.New().Build();
             _studentRepositoryMock.Setup(r => r.GetById(_studentDTO.Id)).Returns(student);
 
             _studentService.Save(_studentDTO);
@@ -90,7 +81,7 @@ namespace TDDxUnitCore.Domain.UnitTest.Students
         public void Save_UpdateMustCall_GetById()
         {
             _studentDTO.Id = 1;
-            var studentAlreadySaved = BuilderStudant.New().Build();
+            var studentAlreadySaved = BuilderStudent.New().Build();
             _studentRepositoryMock.Setup(r => r.GetById(_studentDTO.Id)).Returns(studentAlreadySaved);
             
             _studentService.Save(_studentDTO);
@@ -102,45 +93,12 @@ namespace TDDxUnitCore.Domain.UnitTest.Students
         public void Save_MustUpdateCourse_UpdatedCourse()
         {
             _studentDTO.Id = 1;
-            var student = BuilderStudant.New().Build();
+            var student = BuilderStudent.New().Build();
             _studentRepositoryMock.Setup(r => r.GetById(_studentDTO.Id)).Returns(student);
 
             _studentService.Save(_studentDTO);
 
             Assert.Equal(_studentDTO.Name, student.Name);
-        }
-
-        public class StudentService
-        {
-            private readonly IStudentRepository _studentRepository;
-
-            public StudentService(IStudentRepository studentRepository)
-            {
-                _studentRepository = studentRepository;
-            }
-
-
-            public void Save(StudentDTO studentDto)
-            {
-                var studentAlreadySaved = _studentRepository.GetByEmail(studentDto.Email);
-
-                RulerValidator.New()
-                    .When(studentAlreadySaved != null && studentDto.Id != studentAlreadySaved.Id, Resources.EmailAlreadyTaken)
-                    .When(!Enum.TryParse<Audience>(studentDto.Audience, out var audience), Resources.InvalidAudience)
-                    .ThrowException();
-
-                var student = new Student(studentDto.Name, studentDto.Document, studentDto.Email, audience);
-
-                if (studentDto.Id > 0)
-                {
-                    var studentFromDb = _studentRepository.GetById(studentDto.Id);
-                    studentFromDb.ChangeName(studentDto.Name);
-                }
-
-                if (studentDto.Id == 0)
-                    _studentRepository.Add(student);
-            }
-
         }
     }
 }

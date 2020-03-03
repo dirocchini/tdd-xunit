@@ -1,11 +1,11 @@
 ﻿using Bogus;
 using Bogus.Extensions.Brazil;
-using TDDxUnitCore.Domain.Courses;
+using TDDxUnitCore.Domain.Audiences;
 using TDDxUnitCore.Domain.Students;
 
 namespace TDDxUnitCore.Domain.UnitTest._Builders
 {
-    public class BuilderStudant
+    public class BuilderStudent
     {
         private string _name { get; set; }
         private string _document { get; set; }
@@ -14,7 +14,7 @@ namespace TDDxUnitCore.Domain.UnitTest._Builders
 
         private Faker _faker { get; set; }
 
-        public BuilderStudant()
+        public BuilderStudent()
         {
             _faker = new Faker();
             _name = _faker.Person.FullName;
@@ -24,25 +24,25 @@ namespace TDDxUnitCore.Domain.UnitTest._Builders
         }
 
 
-        public static BuilderStudant New()
+        public static BuilderStudent New()
         {
-            return new BuilderStudant();
+            return new BuilderStudent();
         }
 
 
-        public BuilderStudant WithName(string name)
+        public BuilderStudent WithName(string name)
         {
             _name = name;
             return this;
         }
 
-        public BuilderStudant WithDocument(string document)
+        public BuilderStudent WithDocument(string document)
         {
             _document = document;
             return this;
         }
 
-        public BuilderStudant WithEmail(string email)
+        public BuilderStudent WithEmail(string email)
         {
             _email = email;
             return this;

@@ -1,4 +1,5 @@
 ﻿using TDDxUnitCore.Domain._Base;
+using TDDxUnitCore.Domain.Audiences;
 
 namespace TDDxUnitCore.Domain.Courses
 {

@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using TDDxUnitCore.Domain._Base;
+using TDDxUnitCore.Domain.Audiences;
 
 namespace TDDxUnitCore.Domain.Courses
 {
     public class CourseService
     {
         private readonly ICourseRepository _courseRepository;
+        private readonly IAudienceConverter _audienceConverter;
 
-        public CourseService(ICourseRepository courseRepository)
+        public CourseService(ICourseRepository courseRepository, IAudienceConverter audienceConverter)
         {
             _courseRepository = courseRepository;
+            _audienceConverter = audienceConverter;
         }
 
         public void Save(DTOCourse dtoCourse)
@@ -19,8 +22,9 @@ namespace TDDxUnitCore.Domain.Courses
 
             RulerValidator.New()
                 .When(courseAlreadySaved != null && courseAlreadySaved.Id != dtoCourse.Id, Resources.NameAlreadyUsed)
-                .When(!Enum.TryParse<Audience>(dtoCourse.Audience, out var audience), Resources.InvalidAudience)
                 .ThrowException();
+
+            var audience = _audienceConverter.Convert(audienceGiven: dtoCourse.Audience);
 
             var course = new Course(dtoCourse.Name, dtoCourse.Description, dtoCourse.Workload, audience, dtoCourse.Cost);
 
