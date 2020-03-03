@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using TDDxUnitCore.Domain._Base;
 using TDDxUnitCore.Domain.Audiences;
 
@@ -35,6 +37,15 @@ namespace TDDxUnitCore.Domain.Students
                 var student = new Student(studentDto.Name, studentDto.Document, studentDto.Email, audience);
                 _studentRepository.Add(student);
             }
+        }
+
+        public List<StudentDTO> Getall()
+        {
+            var students = _studentRepository.Get();
+
+            List<StudentDTO> studentsDto = students.Select(s => new StudentDTO(s.Id, s.Name, s.Document, s.Email, s.Audience.ToString())).ToList();
+
+            return studentsDto;
         }
     }
 }

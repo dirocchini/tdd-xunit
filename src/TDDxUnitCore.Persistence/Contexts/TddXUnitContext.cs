@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using TDDxUnitCore.Domain.Courses;
+using TDDxUnitCore.Domain.Students;
 
 namespace TDDxUnitCore.Persistence.Contexts
 {
@@ -14,6 +15,7 @@ namespace TDDxUnitCore.Persistence.Contexts
         }
 
         public DbSet<Course> Courses { get; set; }
+        public DbSet<Student> Students { get; set; }
 
 
 

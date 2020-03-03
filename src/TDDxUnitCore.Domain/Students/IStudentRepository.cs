@@ -6,5 +6,4 @@ namespace TDDxUnitCore.Domain.Students
     {
         Student GetByEmail(string email);
     }
-
 }
