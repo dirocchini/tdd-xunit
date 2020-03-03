@@ -2,6 +2,11 @@
 {
     public class StudentDTO
     {
+        public StudentDTO()
+        {
+                
+        }
+
         public StudentDTO(string name, string document, string email, string audience)
         {
             Name = name;

@@ -21,5 +21,10 @@ namespace TDDxUnitCore.Web.Controllers
         {
             return View(_studentService.Getall());
         }
+
+        public IActionResult CreateOrEdit(int id)
+        {
+            return View(new StudentDTO());
+        }
     }
 }
