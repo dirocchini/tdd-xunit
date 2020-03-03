@@ -24,7 +24,17 @@ namespace TDDxUnitCore.Web.Controllers
 
         public IActionResult CreateOrEdit(int id)
         {
-            return View(new StudentDTO());
+            if(id == 0)
+                return View(new StudentDTO());
+
+            return View(_studentService.Get(id));
+        }
+
+        [HttpPost]
+        public IActionResult CreateOrEdit(StudentDTO studentDto)
+        {
+            _studentService.Save(studentDto);
+            return RedirectToAction("Index");
         }
     }
 }

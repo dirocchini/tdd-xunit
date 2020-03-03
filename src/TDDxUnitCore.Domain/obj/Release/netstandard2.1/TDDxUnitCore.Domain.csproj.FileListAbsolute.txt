@@ -6,3 +6,11 @@ C:\y_projects\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Domain\obj\Release\ne
 C:\y_projects\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Domain\obj\Release\netstandard2.1\TDDxUnitCore.Domain.AssemblyInfo.cs
 C:\y_projects\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Domain\obj\Release\netstandard2.1\TDDxUnitCore.Domain.dll
 C:\y_projects\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Domain\obj\Release\netstandard2.1\TDDxUnitCore.Domain.pdb
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Domain\bin\Release\netstandard2.1\TDDxUnitCore.Domain.deps.json
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Domain\bin\Release\netstandard2.1\TDDxUnitCore.Domain.dll
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Domain\bin\Release\netstandard2.1\TDDxUnitCore.Domain.pdb
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Domain\obj\Release\netstandard2.1\TDDxUnitCore.Domain.csprojAssemblyReference.cache
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Domain\obj\Release\netstandard2.1\TDDxUnitCore.Domain.AssemblyInfoInputs.cache
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Domain\obj\Release\netstandard2.1\TDDxUnitCore.Domain.AssemblyInfo.cs
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Domain\obj\Release\netstandard2.1\TDDxUnitCore.Domain.dll
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Domain\obj\Release\netstandard2.1\TDDxUnitCore.Domain.pdb

@@ -47,5 +47,12 @@ namespace TDDxUnitCore.Domain.Students
 
             return studentsDto;
         }
+
+
+        public StudentDTO Get(int id)
+        {
+            var student = _studentRepository.GetById(id);
+            return new StudentDTO(student.Id, student.Name, student.Document, student.Email, student.Audience.ToString());
+        }
     }
 }
