@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TDDxUnitCore.CrossCutting\TDDxUnitCore.CrossCutting.csproj" />
     <ProjectReference Include="..\TDDxUnitCore.Domain\TDDxUnitCore.Domain.csproj" />
   </ItemGroup>
 

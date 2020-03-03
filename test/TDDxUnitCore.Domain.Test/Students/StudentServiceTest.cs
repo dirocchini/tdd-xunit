@@ -1,4 +1,5 @@
 ﻿using System;
+using AutoMapper;
 using Bogus;
 using Bogus.Extensions.Brazil;
 using Moq;
@@ -14,12 +15,15 @@ namespace TDDxUnitCore.Domain.UnitTest.Students
     public partial class StudentServiceTest
     {
         private readonly StudentDTO _studentDTO;
-        private readonly Mock<IStudentRepository> _studentRepositoryMock;
         private readonly StudentService _studentService;
+        private readonly Mock<IStudentRepository> _studentRepositoryMock;
         private readonly Mock<IAudienceConverter> _audienceConverterMock;
+        private readonly Mock<IMapper> _mapperMock;
+
 
         public StudentServiceTest()
         {
+
             var faker = new Faker();
 
             _studentDTO = new StudentDTO(
@@ -31,7 +35,10 @@ namespace TDDxUnitCore.Domain.UnitTest.Students
 
             _studentRepositoryMock = new Mock<IStudentRepository>();
             _audienceConverterMock = new Mock<IAudienceConverter>();
-            _studentService = new StudentService(_studentRepositoryMock.Object, _audienceConverterMock.Object);
+            _mapperMock = new Mock<IMapper>();
+            _studentService = new StudentService(_studentRepositoryMock.Object, _audienceConverterMock.Object, _mapperMock.Object);
+            
+            _mapperMock.Setup(r => r.Map<Student>(_studentDTO)).Returns(new Student(_studentDTO.Name, _studentDTO.Document, _studentDTO.Email, Audience.CTO));
         }
 
         [Fact]
@@ -44,6 +51,7 @@ namespace TDDxUnitCore.Domain.UnitTest.Students
         [Fact]
         public void MustAddStudentEqualToDto()
         {
+
             _studentService.Save(_studentDTO);
             _studentRepositoryMock.Verify(r => r.Add(
                 It.Is<Student>(s =>

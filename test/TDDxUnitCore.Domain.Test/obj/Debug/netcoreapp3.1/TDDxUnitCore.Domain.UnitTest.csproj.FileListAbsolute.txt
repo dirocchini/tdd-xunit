@@ -106,10 +106,13 @@ C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debu
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\TDDxUnitCore.Domain.UnitTest.runtimeconfig.dev.json
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\TDDxUnitCore.Domain.UnitTest.dll
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\TDDxUnitCore.Domain.UnitTest.pdb
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\Bogus.dll
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\Castle.Core.dll
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\ExpectedObjects.dll
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.CoreUtilities.dll
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.PlatformAbstractions.dll
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
@@ -190,7 +193,9 @@ C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debu
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\TDDxUnitCore.CrossCutting.dll
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\TDDxUnitCore.Domain.dll
+C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\TDDxUnitCore.CrossCutting.pdb
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\TDDxUnitCore.Domain.pdb
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\obj\Debug\netcoreapp3.1\TDDxUnitCore.Domain.UnitTest.csprojAssemblyReference.cache
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\obj\Debug\netcoreapp3.1\TDDxUnitCore.Domain.UnitTest.AssemblyInfoInputs.cache

@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="Bogus" Version="29.0.1" />
     <PackageReference Include="ExpectedObjects" Version="2.3.4" />
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
@@ -21,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\TDDxUnitCore.CrossCutting\TDDxUnitCore.CrossCutting.csproj" />
     <ProjectReference Include="..\..\src\TDDxUnitCore.Domain\TDDxUnitCore.Domain.csproj" />
   </ItemGroup>
 

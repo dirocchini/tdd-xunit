@@ -1,0 +1,142 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.CrossCutting\\TDDxUnitCore.CrossCutting.csproj": {}
+  },
+  "projects": {
+    "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.CrossCutting\\TDDxUnitCore.CrossCutting.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.CrossCutting\\TDDxUnitCore.CrossCutting.csproj",
+        "projectName": "TDDxUnitCore.CrossCutting",
+        "projectPath": "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.CrossCutting\\TDDxUnitCore.CrossCutting.csproj",
+        "packagesPath": "C:\\Users\\Rocchini\\.nuget\\packages\\",
+        "outputPath": "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.CrossCutting\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Rocchini\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {
+              "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\TDDxUnitCore.Domain.csproj": {
+                "projectPath": "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\TDDxUnitCore.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\TDDxUnitCore.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\TDDxUnitCore.Domain.csproj",
+        "projectName": "TDDxUnitCore.Domain",
+        "projectPath": "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\TDDxUnitCore.Domain.csproj",
+        "packagesPath": "C:\\Users\\Rocchini\\.nuget\\packages\\",
+        "outputPath": "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Rocchini\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

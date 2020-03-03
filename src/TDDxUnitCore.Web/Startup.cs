@@ -1,7 +1,12 @@
+using System;
+using System.Linq;
+using System.Reflection;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TDDxUnitCore.CrossCutting.Mapper;
 using TDDxUnitCore.Domain._Base;
 using TDDxUnitCore.IoC;
 using TDDxUnitCore.Web.Filters;
@@ -26,6 +31,14 @@ namespace TDDxUnitCore.Web
 
             services.AddMvc(config => { config.Filters.Add(typeof(CustomExceptionFilter)); })
                 .AddRazorRuntimeCompilation();
+
+
+
+
+
+            #region [auto mapper]
+            ConfigureMappings.Configure(services);
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -5,5 +5,6 @@ namespace TDDxUnitCore.Domain.Students
     public interface IStudentRepository : IRepositoryBase<Student>
     {
         Student GetByEmail(string email);
+        Student GetByCPF(string cpf);
     }
 }

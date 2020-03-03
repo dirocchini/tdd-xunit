@@ -19,7 +19,7 @@ namespace TDDxUnitCore.Web.Controllers
 
         public IActionResult Index()
         {
-            return View(_studentService.Getall());
+            return View(_studentService.GetAll());
         }
 
         public IActionResult CreateOrEdit(int id)

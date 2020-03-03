@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using TDDxUnitCore.CrossCutting.Extensions;
+using Xunit;
 
 namespace TDDxUnitCore.Domain.Test
 {
@@ -18,6 +19,18 @@ namespace TDDxUnitCore.Domain.Test
 
             //Assert
             Assert.Equal(a, b);
+        }
+
+
+        [Theory]
+        [InlineData("Diego@d iego.com", "diegodiegocom")]
+        [InlineData("D@! - ie/go@d iego.com", "diegodiegocom")]
+        public void ComparableString_ValidComparison_True(string input, string expectedValue)
+        {
+            var newInput = input.ComparableString();
+            
+
+            Assert.Equal(expectedValue, newInput);
         }
     }
 }
