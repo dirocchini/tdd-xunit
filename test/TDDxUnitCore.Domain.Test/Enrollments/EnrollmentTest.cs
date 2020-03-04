@@ -20,8 +20,8 @@ namespace TDDxUnitCore.Domain.UnitTest.Enrollments
         {
             var enrollmentExpected = new
             {
-                Student = BuilderStudent.New().Build(),
-                Course = BuilderCourse.New().Build(),
+                Student = BuilderStudent.New().WithAudience(Audience.CTO).Build(),
+                Course = BuilderCourse.New().WithAudience(Audience.CTO).Build(),
                 PaidValue = 123.93
             };
 
@@ -68,7 +68,7 @@ namespace TDDxUnitCore.Domain.UnitTest.Enrollments
         [Fact]
         public void EnrollmentMustHasDiscount() //dont make sense
         {
-            Course course = BuilderCourse.New().WithCost(100).Build();
+            Course course = BuilderCourse.New().WithCost(100).WithAudience(Audience.CTO).Build();
             double paidValue = course.Cost - 1;
 
             var enrollment = BuilderEnrollment.New().WithPaidValue(paidValue).WithCourse(course).Build();

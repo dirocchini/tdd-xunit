@@ -7,6 +7,7 @@ namespace TDDxUnitCore.Domain.UnitTest._Builders
 {
     public class BuilderStudent
     {
+        private int _id { get; set; }
         private string _name { get; set; }
         private string _document { get; set; }
         private string _email { get; set; }
@@ -17,6 +18,7 @@ namespace TDDxUnitCore.Domain.UnitTest._Builders
         private BuilderStudent()
         {
             _faker = new Faker();
+            _id = 0;
             _name = _faker.Person.FullName;
             _email = _faker.Person.Email;
             _document = _faker.Person.Cpf(true);
@@ -29,16 +31,16 @@ namespace TDDxUnitCore.Domain.UnitTest._Builders
             return new BuilderStudent();
         }
 
+        public BuilderStudent WithId(int id)
+        {
+            _id = id;
+            return this;
+        }
+
 
         public BuilderStudent WithName(string name)
         {
             _name = name;
-            return this;
-        }
-
-        public BuilderStudent WithDocument(string document)
-        {
-            _document = document;
             return this;
         }
 
@@ -48,11 +50,18 @@ namespace TDDxUnitCore.Domain.UnitTest._Builders
             return this;
         }
 
+        public BuilderStudent WithDocument(string document)
+        {
+            _document = document;
+            return this;
+        }
+
         public BuilderStudent WithAudience(Audience audience)
         {
             _audience = audience;
             return this;
         }
+
 
         public Student Build()
         {

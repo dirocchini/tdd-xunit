@@ -19,6 +19,10 @@ namespace TDDxUnitCore.Domain.UnitTest.Enrollments
         private readonly Mock<ICourseRepository> _courseRepository;
         private readonly Mock<IStudentRepository> _studentRepository;
         private readonly EnrollmentService _enrollmentService;
+        private readonly Student _student;
+        private readonly Course _course;
+        private readonly EnrollmentDTO _enrollmentDTO;
+
 
         public EnrollmentServiceTest()
         {
@@ -26,8 +30,27 @@ namespace TDDxUnitCore.Domain.UnitTest.Enrollments
             _studentRepository = new Mock<IStudentRepository>();
             _enrollmentService = new EnrollmentService(_courseRepository.Object, _studentRepository.Object);
 
+            _course = BuilderCourse.New().WithId(1).WithAudience(Audience.CTO).Build();
+            _student = BuilderStudent.New().WithId(1).WithAudience(Audience.CTO).Build();
+
+            _courseRepository.Setup(r => r.GetById(It.IsAny<int>())).Returns(_course);
+            _studentRepository.Setup(r => r.GetById(It.IsAny<int>())).Returns(_student);
+
+
+            _enrollmentDTO = new EnrollmentDTO(_course.Id, _student.Id);
         }
 
+
+
+        [Fact]
+        public void CourseMustNotBeEmpty()
+        {
+            Course invalidCourse = null;
+            _courseRepository.Setup(r => r.GetById(It.IsAny<int>())).Returns(invalidCourse);
+
+
+            Assert.Throws<DomainCustomException>(() => _enrollmentService.Save(_enrollmentDTO)).WithMessage(Resources.InvalidCourse);
+        }
 
     }
 

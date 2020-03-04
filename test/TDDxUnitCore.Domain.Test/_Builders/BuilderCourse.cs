@@ -6,6 +6,7 @@ namespace TDDxUnitCore.Domain.Test._Builders
 {
     public class BuilderCourse
     {
+        private int _id { get; set; }
         private string _name { get; set; }
         private string _description { get; set; }
         private double _workload { get; set; }
@@ -17,6 +18,7 @@ namespace TDDxUnitCore.Domain.Test._Builders
         private BuilderCourse()
         {
             _faker = new Faker();
+            _id = 0;
             _name = _faker.Person.FullName;
             _description = string.Join(' ', _faker.Lorem.Words(7));
             _workload = _faker.Random.Double(50, 5684);
@@ -30,18 +32,25 @@ namespace TDDxUnitCore.Domain.Test._Builders
             return new BuilderCourse();
         }
 
+        public BuilderCourse WithId(int id)
+        {
+            _id = id;
+            return this;
+        }
+
 
         public BuilderCourse WithName (string name)
         {
             _name = name;
             return this;
         }
+
         public BuilderCourse WithDescription(string description)
         {
             _description = description;
             return this;
         }
-        
+
         public BuilderCourse WithWorkload(double workload)
         {
             _workload = workload;

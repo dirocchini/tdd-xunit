@@ -38,6 +38,7 @@ namespace TDDxUnitCore.Domain.Test._Builders
             _student = student;
             return this;
         }
+
         public BuilderEnrollment WithCourse(Course course)
         {
             _course = course;
