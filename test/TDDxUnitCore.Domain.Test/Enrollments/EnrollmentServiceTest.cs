@@ -16,25 +16,19 @@ namespace TDDxUnitCore.Domain.UnitTest.Enrollments
 {
     public class EnrollmentServiceTest
     {
-        [Fact]
-        public void AudienceMustBeEqual()
+        private readonly Mock<ICourseRepository> _courseRepository;
+        private readonly Mock<IStudentRepository> _studentRepository;
+        private readonly EnrollmentService _enrollmentService;
+
+        public EnrollmentServiceTest()
         {
-            var course = BuilderCourse.New().WithAudience(Audience.CTO).Build();
-            var courseRepository = new Mock<ICourseRepository>();
-            courseRepository.Setup(r => r.GetById(course.Id)).Returns(course);
+            _courseRepository = new Mock<ICourseRepository>();
+            _studentRepository = new Mock<IStudentRepository>();
+            _enrollmentService = new EnrollmentService(_courseRepository.Object, _studentRepository.Object);
 
-
-            var student = BuilderStudent.New().WithAudience(Audience.CTO).Build();
-            var studentRepository =new Mock<IStudentRepository>();
-            studentRepository.Setup(r => r.GetById(student.Id)).Returns(student);
-
-            var enrollmentDTO = new EnrollmentDTO(courseId: course.Id, studentId: student.Id);
-
-            var enrollmentService = new EnrollmentService(courseRepository.Object, studentRepository.Object);
-            
-
-            Assert.Throws<DomainCustomException>(() => enrollmentService.Save(enrollmentDTO)).WithMessage(Resources.AudienceNotEquals);
         }
+
+
     }
 
     public class EnrollmentService
@@ -51,6 +45,9 @@ namespace TDDxUnitCore.Domain.UnitTest.Enrollments
 
         public void Save(EnrollmentDTO enrollmentDto)
         {
+            var course = _courseRepository.GetById(enrollmentDto.CourseId);
+            var student = _studentRepository.GetById(enrollmentDto.StudentId);
+
 
         }
     }

@@ -50,7 +50,6 @@ namespace TDDxUnitCore.Domain.Test._Builders
             return this;
         }
 
-
         public Enrollment Build()
         {
             return new Enrollment(_student, _course, _paidValue);

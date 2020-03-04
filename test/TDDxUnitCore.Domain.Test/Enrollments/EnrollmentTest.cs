@@ -2,6 +2,7 @@
 using ExpectedObjects;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 using TDDxUnitCore.Domain._Base;
+using TDDxUnitCore.Domain.Audiences;
 using TDDxUnitCore.Domain.Courses;
 using TDDxUnitCore.Domain.Enrollments;
 using TDDxUnitCore.Domain.Students;
@@ -62,12 +63,10 @@ namespace TDDxUnitCore.Domain.UnitTest.Enrollments
 
             Assert.Throws<DomainCustomException>(() => BuilderEnrollment.New().WithCourse(course).WithPaidValue(invalidPaidValue).Build()).WithMessage(Resources.InvalidPaidOriginalCost);
         }
-
-
-
-
+        
+        
         [Fact]
-        public void EnrollmentMustHasDiscount()
+        public void EnrollmentMustHasDiscount() //dont make sense
         {
             Course course = BuilderCourse.New().WithCost(100).Build();
             double paidValue = course.Cost - 1;
@@ -75,6 +74,16 @@ namespace TDDxUnitCore.Domain.UnitTest.Enrollments
             var enrollment = BuilderEnrollment.New().WithPaidValue(paidValue).WithCourse(course).Build();
 
             Assert.True(enrollment.HasDiscount);
+        }
+
+
+        [Fact]
+        public void AudienceMustBeEqual()
+        {
+            var course = BuilderCourse.New().WithAudience(Audience.CTO).Build();
+            var student = BuilderStudent.New().WithAudience(Audience.Student).Build();
+
+            Assert.Throws<DomainCustomException>(() => BuilderEnrollment.New().WithCourse(course).WithStudent(student).Build()).WithMessage(Resources.AudienceNotEquals);
         }
     }
 }

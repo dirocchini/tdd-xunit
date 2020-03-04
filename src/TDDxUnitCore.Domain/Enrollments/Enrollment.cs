@@ -18,6 +18,7 @@ namespace TDDxUnitCore.Domain.Enrollments
                 .When(course == null, Resources.InvalidCourse)
                 .When(paidValue <= 0, Resources.InvalidPaidValue)
                 .When(course != null && paidValue > course.Cost, Resources.InvalidPaidOriginalCost)
+                .When(course != null && student != null && course.Audience != student.Audience, Resources.AudienceNotEquals)
                 .ThrowException();
 
 
