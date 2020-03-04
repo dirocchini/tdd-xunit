@@ -203,3 +203,8 @@ C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\obj\Debu
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\obj\Debug\netcoreapp3.1\TDDxUnitCore.Domain.UnitTest.csproj.CopyComplete
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\obj\Debug\netcoreapp3.1\TDDxUnitCore.Domain.UnitTest.dll
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\obj\Debug\netcoreapp3.1\TDDxUnitCore.Domain.UnitTest.pdb
+C:\y_projects\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\y_projects\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\y_projects\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\y_projects\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\TDDxUnitCore.CrossCutting.dll
+C:\y_projects\studies\tdd-xunit\tdd-xunit\test\TDDxUnitCore.Domain.Test\bin\Debug\netcoreapp3.1\TDDxUnitCore.CrossCutting.pdb

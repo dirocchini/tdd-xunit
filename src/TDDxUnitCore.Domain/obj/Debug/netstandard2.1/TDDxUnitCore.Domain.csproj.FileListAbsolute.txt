@@ -19,3 +19,4 @@ C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Domain\obj\Debug\nets
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Domain\obj\Debug\netstandard2.1\TDDxUnitCore.Domain.AssemblyInfo.cs
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Domain\obj\Debug\netstandard2.1\TDDxUnitCore.Domain.dll
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Domain\obj\Debug\netstandard2.1\TDDxUnitCore.Domain.pdb
+C:\y_projects\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Domain\obj\Debug\netstandard2.1\TDDxUnitCore.Domain.csprojAssemblyReference.cache

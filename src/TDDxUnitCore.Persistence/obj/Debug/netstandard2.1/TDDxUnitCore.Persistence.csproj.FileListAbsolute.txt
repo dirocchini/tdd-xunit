@@ -33,3 +33,5 @@ C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Persistence\obj\Debug
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Persistence\obj\Debug\netstandard2.1\TDDxUnitCore.Persistence.csproj.CopyComplete
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Persistence\obj\Debug\netstandard2.1\TDDxUnitCore.Persistence.dll
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Persistence\obj\Debug\netstandard2.1\TDDxUnitCore.Persistence.pdb
+C:\y_projects\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Persistence\bin\Debug\netstandard2.1\TDDxUnitCore.CrossCutting.dll
+C:\y_projects\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Persistence\bin\Debug\netstandard2.1\TDDxUnitCore.CrossCutting.pdb

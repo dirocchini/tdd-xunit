@@ -10,5 +10,9 @@
         public static string InvalidDocument = "Must have a valid document (CPF)";
         public static string InvalidEmail = "Must have a valid email";
         public static string EmailAlreadyTaken = "Email Already Used";
+        public static string InvalidStudent = "Invalid Student";
+        public static string InvalidCourse = "Invalid Course";
+        public static string InvalidPaidValue = "Invalid Paid Value";
+        public static string InvalidPaidOriginalCost = "Paid Value Must Not Be Grater Than Original Value";
     }
 }

@@ -1252,3 +1252,9 @@ C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Web\obj\Debug\netcore
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Web\obj\Debug\netcoreapp3.1\TDDxUnitCore.Web.csproj.CopyComplete
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Web\obj\Debug\netcoreapp3.1\TDDxUnitCore.Web.dll
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Web\obj\Debug\netcoreapp3.1\TDDxUnitCore.Web.pdb
+C:\y_projects\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Web\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\y_projects\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Web\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\y_projects\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Web\bin\Debug\netcoreapp3.1\TDDxUnitCore.CrossCutting.dll
+C:\y_projects\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Web\bin\Debug\netcoreapp3.1\TDDxUnitCore.CrossCutting.pdb
+C:\y_projects\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Web\obj\Debug\netcoreapp3.1\Razor\Views\Student\CreateOrEdit.cshtml.g.cs
+C:\y_projects\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.Web\obj\Debug\netcoreapp3.1\Razor\Views\Student\Index.cshtml.g.cs

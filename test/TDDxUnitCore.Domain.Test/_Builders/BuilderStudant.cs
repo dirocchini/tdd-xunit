@@ -14,7 +14,7 @@ namespace TDDxUnitCore.Domain.UnitTest._Builders
 
         private Faker _faker { get; set; }
 
-        public BuilderStudent()
+        private BuilderStudent()
         {
             _faker = new Faker();
             _name = _faker.Person.FullName;

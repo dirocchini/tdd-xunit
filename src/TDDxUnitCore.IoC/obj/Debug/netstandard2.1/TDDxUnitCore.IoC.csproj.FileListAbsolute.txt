@@ -39,3 +39,5 @@ C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.IoC\obj\Debug\netstan
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.IoC\obj\Debug\netstandard2.1\TDDxUnitCore.IoC.csproj.CopyComplete
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.IoC\obj\Debug\netstandard2.1\TDDxUnitCore.IoC.dll
 C:\y_projetos\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.IoC\obj\Debug\netstandard2.1\TDDxUnitCore.IoC.pdb
+C:\y_projects\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.IoC\bin\Debug\netstandard2.1\TDDxUnitCore.CrossCutting.dll
+C:\y_projects\studies\tdd-xunit\tdd-xunit\src\TDDxUnitCore.IoC\bin\Debug\netstandard2.1\TDDxUnitCore.CrossCutting.pdb
