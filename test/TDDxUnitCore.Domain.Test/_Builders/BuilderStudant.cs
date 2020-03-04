@@ -48,6 +48,12 @@ namespace TDDxUnitCore.Domain.UnitTest._Builders
             return this;
         }
 
+        public BuilderStudent WithAudience(Audience audience)
+        {
+            _audience = audience;
+            return this;
+        }
+
         public Student Build()
         {
             return new Student(_name, _document, _email, _audience);
