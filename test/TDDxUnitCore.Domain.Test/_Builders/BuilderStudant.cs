@@ -1,4 +1,5 @@
-﻿using Bogus;
+﻿using System;
+using Bogus;
 using Bogus.Extensions.Brazil;
 using TDDxUnitCore.Domain.Audiences;
 using TDDxUnitCore.Domain.Students;
@@ -65,7 +66,15 @@ namespace TDDxUnitCore.Domain.UnitTest._Builders
 
         public Student Build()
         {
-            return new Student(_name, _document, _email, _audience);
+            var student = new Student(_name, _document, _email, _audience);
+
+            if (_id > 0)
+            {
+                var propertyInfo = student.GetType().GetProperty("Id");
+                propertyInfo.SetValue(student, Convert.ChangeType(_id, propertyInfo.PropertyType), null);
+            }
+
+            return student;
         }
     }
 }

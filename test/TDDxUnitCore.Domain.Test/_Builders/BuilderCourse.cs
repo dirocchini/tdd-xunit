@@ -1,4 +1,5 @@
-﻿using Bogus;
+﻿using System;
+using Bogus;
 using TDDxUnitCore.Domain.Audiences;
 using TDDxUnitCore.Domain.Courses;
 
@@ -71,7 +72,15 @@ namespace TDDxUnitCore.Domain.Test._Builders
 
         public Course Build()
         {
-            return new Course(_name, _description, _workload, _audience, _cost);
+            var course = new Course(_name, _description, _workload, _audience, _cost);
+
+            if (_id > 0)
+            {
+                var propertyInfo = course.GetType().GetProperty("Id");
+                propertyInfo.SetValue(course, Convert.ChangeType(_id, propertyInfo.PropertyType), null);
+            }
+
+            return course;
         }
     }
 }

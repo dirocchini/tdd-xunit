@@ -18,6 +18,8 @@ namespace TDDxUnitCore.Domain.UnitTest.Enrollments
     {
         private readonly Mock<ICourseRepository> _courseRepository;
         private readonly Mock<IStudentRepository> _studentRepository;
+        private readonly Mock<IEnrollmentRepository> _enrollmentRepository;
+
         private readonly EnrollmentService _enrollmentService;
         private readonly Student _student;
         private readonly Course _course;
@@ -28,16 +30,17 @@ namespace TDDxUnitCore.Domain.UnitTest.Enrollments
         {
             _courseRepository = new Mock<ICourseRepository>();
             _studentRepository = new Mock<IStudentRepository>();
-            _enrollmentService = new EnrollmentService(_courseRepository.Object, _studentRepository.Object);
+            _enrollmentRepository = new Mock<IEnrollmentRepository>();
 
-            _courseRepository.Setup(r => r.GetById(It.IsAny<int>())).Returns(_course);
-            _studentRepository.Setup(r => r.GetById(It.IsAny<int>())).Returns(_student);
+            _enrollmentService = new EnrollmentService(_courseRepository.Object, _studentRepository.Object, _enrollmentRepository.Object);
 
             _course = BuilderCourse.New().WithId(1).WithAudience(Audience.CTO).Build();
             _student = BuilderStudent.New().WithId(1).WithAudience(Audience.CTO).Build();
 
+            _courseRepository.Setup(r => r.GetById(It.IsAny<int>())).Returns(_course);
+            _studentRepository.Setup(r => r.GetById(It.IsAny<int>())).Returns(_student);
 
-            _enrollmentDTO = new EnrollmentDTO(_course.Id, _student.Id);
+            _enrollmentDTO = new EnrollmentDTO(_course.Id, _student.Id, _course.Cost);
         }
 
 
@@ -59,49 +62,14 @@ namespace TDDxUnitCore.Domain.UnitTest.Enrollments
 
             Assert.Throws<DomainCustomException>(() => _enrollmentService.Save(_enrollmentDTO)).WithMessage(Resources.StudentNotFound);
         }
-    }
 
-    public class EnrollmentService
-    {
-        private readonly ICourseRepository _courseRepository;
-        private readonly IStudentRepository _studentRepository;
 
-        public EnrollmentService(ICourseRepository courseRepository, IStudentRepository studentRepository)
+        [Fact]
+        public void Save_Enrollment_Void()
         {
-            _courseRepository = courseRepository;
-            _studentRepository = studentRepository;
-        }
+            _enrollmentService.Save(_enrollmentDTO);
 
-
-        public void Save(EnrollmentDTO enrollmentDto)
-        {
-            var course = _courseRepository.GetById(enrollmentDto.CourseId);
-            var student = _studentRepository.GetById(enrollmentDto.StudentId);
-
-
-
-            RulerValidator.New()
-                .When(course == null, Resources.CourseNotFound)
-                .When(student == null, Resources.StudentNotFound)
-                .ThrowException();
-        }
-    }
-
-    public interface IEnrollmentRepository : IRepositoryBase<Enrollment>
-    {
-        
-    }
-
-    public class EnrollmentDTO
-    {
-        public int CourseId { get; set; }
-        public int StudentId { get; set; }
-        
-
-        public EnrollmentDTO(int courseId, int studentId)
-        {
-            CourseId = courseId;
-            StudentId = studentId;
+            _enrollmentRepository.Verify(r => r.Add(It.Is<Enrollment>(m=> m.Course == _course && m.Student == _student)));
         }
     }
 }
