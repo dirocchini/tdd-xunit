@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\test\\TDDxUnitCore.Domain.Test\\TDDxUnitCore.Domain.UnitTest.csproj": {}
+    "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\test\\TDDxUnitCore.Domain.Test\\TDDxUnitCore.Domain.UnitTest.csproj": {}
   },
   "projects": {
-    "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.CrossCutting\\TDDxUnitCore.CrossCutting.csproj": {
+    "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.CrossCutting\\TDDxUnitCore.CrossCutting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.CrossCutting\\TDDxUnitCore.CrossCutting.csproj",
+        "projectUniqueName": "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.CrossCutting\\TDDxUnitCore.CrossCutting.csproj",
         "projectName": "TDDxUnitCore.CrossCutting",
-        "projectPath": "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.CrossCutting\\TDDxUnitCore.CrossCutting.csproj",
-        "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
-        "outputPath": "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.CrossCutting\\obj\\",
+        "projectPath": "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.CrossCutting\\TDDxUnitCore.CrossCutting.csproj",
+        "packagesPath": "C:\\Users\\Rocchini\\.nuget\\packages\\",
+        "outputPath": "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.CrossCutting\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Rocchini\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,8 +30,8 @@
         "frameworks": {
           "netstandard2.1": {
             "projectReferences": {
-              "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\TDDxUnitCore.Domain.csproj": {
-                "projectPath": "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\TDDxUnitCore.Domain.csproj"
+              "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\TDDxUnitCore.Domain.csproj": {
+                "projectPath": "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\TDDxUnitCore.Domain.csproj"
               }
             }
           }
@@ -73,24 +73,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\TDDxUnitCore.Domain.csproj": {
+    "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\TDDxUnitCore.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\TDDxUnitCore.Domain.csproj",
+        "projectUniqueName": "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\TDDxUnitCore.Domain.csproj",
         "projectName": "TDDxUnitCore.Domain",
-        "projectPath": "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\TDDxUnitCore.Domain.csproj",
-        "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
-        "outputPath": "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\obj\\",
+        "projectPath": "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\TDDxUnitCore.Domain.csproj",
+        "packagesPath": "C:\\Users\\Rocchini\\.nuget\\packages\\",
+        "outputPath": "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Rocchini\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -134,24 +134,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\test\\TDDxUnitCore.Domain.Test\\TDDxUnitCore.Domain.UnitTest.csproj": {
+    "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\test\\TDDxUnitCore.Domain.Test\\TDDxUnitCore.Domain.UnitTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\test\\TDDxUnitCore.Domain.Test\\TDDxUnitCore.Domain.UnitTest.csproj",
+        "projectUniqueName": "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\test\\TDDxUnitCore.Domain.Test\\TDDxUnitCore.Domain.UnitTest.csproj",
         "projectName": "TDDxUnitCore.Domain.UnitTest",
-        "projectPath": "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\test\\TDDxUnitCore.Domain.Test\\TDDxUnitCore.Domain.UnitTest.csproj",
-        "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
-        "outputPath": "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\test\\TDDxUnitCore.Domain.Test\\obj\\",
+        "projectPath": "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\test\\TDDxUnitCore.Domain.Test\\TDDxUnitCore.Domain.UnitTest.csproj",
+        "packagesPath": "C:\\Users\\Rocchini\\.nuget\\packages\\",
+        "outputPath": "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\test\\TDDxUnitCore.Domain.Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Rocchini\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -164,11 +164,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.CrossCutting\\TDDxUnitCore.CrossCutting.csproj": {
-                "projectPath": "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.CrossCutting\\TDDxUnitCore.CrossCutting.csproj"
+              "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.CrossCutting\\TDDxUnitCore.CrossCutting.csproj": {
+                "projectPath": "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.CrossCutting\\TDDxUnitCore.CrossCutting.csproj"
               },
-              "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\TDDxUnitCore.Domain.csproj": {
-                "projectPath": "C:\\y_projects\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\TDDxUnitCore.Domain.csproj"
+              "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\TDDxUnitCore.Domain.csproj": {
+                "projectPath": "C:\\y_projetos\\studies\\tdd-xunit\\tdd-xunit\\src\\TDDxUnitCore.Domain\\TDDxUnitCore.Domain.csproj"
               }
             }
           }
@@ -236,7 +236,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

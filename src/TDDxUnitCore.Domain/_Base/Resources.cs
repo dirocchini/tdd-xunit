@@ -15,5 +15,7 @@
         public static string InvalidPaidValue = "Invalid Paid Value";
         public static string InvalidPaidOriginalCost = "Paid Value Must Not Be Grater Than Original Value";
         public static string AudienceNotEquals = "Audience Must Be Equal";
+        public static string CourseNotFound = "Course Not Found";
+        public static string StudentNotFound = "Student Not Found";
     }
 }

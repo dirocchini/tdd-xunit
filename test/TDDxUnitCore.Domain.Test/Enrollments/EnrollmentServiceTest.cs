@@ -30,11 +30,11 @@ namespace TDDxUnitCore.Domain.UnitTest.Enrollments
             _studentRepository = new Mock<IStudentRepository>();
             _enrollmentService = new EnrollmentService(_courseRepository.Object, _studentRepository.Object);
 
-            _course = BuilderCourse.New().WithId(1).WithAudience(Audience.CTO).Build();
-            _student = BuilderStudent.New().WithId(1).WithAudience(Audience.CTO).Build();
-
             _courseRepository.Setup(r => r.GetById(It.IsAny<int>())).Returns(_course);
             _studentRepository.Setup(r => r.GetById(It.IsAny<int>())).Returns(_student);
+
+            _course = BuilderCourse.New().WithId(1).WithAudience(Audience.CTO).Build();
+            _student = BuilderStudent.New().WithId(1).WithAudience(Audience.CTO).Build();
 
 
             _enrollmentDTO = new EnrollmentDTO(_course.Id, _student.Id);
@@ -43,15 +43,22 @@ namespace TDDxUnitCore.Domain.UnitTest.Enrollments
 
 
         [Fact]
-        public void CourseMustNotBeEmpty()
+        public void Save_CourseNotFound_Exception()
         {
             Course invalidCourse = null;
-            _courseRepository.Setup(r => r.GetById(It.IsAny<int>())).Returns(invalidCourse);
+            _courseRepository.Setup(r => r.GetById(_enrollmentDTO.CourseId)).Returns(invalidCourse);
 
-
-            Assert.Throws<DomainCustomException>(() => _enrollmentService.Save(_enrollmentDTO)).WithMessage(Resources.InvalidCourse);
+            Assert.Throws<DomainCustomException>(() => _enrollmentService.Save(_enrollmentDTO)).WithMessage(Resources.CourseNotFound);
         }
 
+        [Fact]
+        public void Save_StudentNotFound_Exception()
+        {
+            Student invalidStudent = null;
+            _studentRepository.Setup(r => r.GetById(_enrollmentDTO.StudentId)).Returns(invalidStudent);
+
+            Assert.Throws<DomainCustomException>(() => _enrollmentService.Save(_enrollmentDTO)).WithMessage(Resources.StudentNotFound);
+        }
     }
 
     public class EnrollmentService
@@ -72,6 +79,11 @@ namespace TDDxUnitCore.Domain.UnitTest.Enrollments
             var student = _studentRepository.GetById(enrollmentDto.StudentId);
 
 
+
+            RulerValidator.New()
+                .When(course == null, Resources.CourseNotFound)
+                .When(student == null, Resources.StudentNotFound)
+                .ThrowException();
         }
     }
 
