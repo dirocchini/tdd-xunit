@@ -34,6 +34,11 @@ namespace TDDxUnitCore.Domain.Enrollments
         public void FinishEnrollment(int enrollmentId, decimal expectedStudentGrade)
         {
             var enrollment = _enrollmentRepository.GetById(enrollmentId);
+
+            RulerValidator.New()
+                .When(enrollment == null, Resources.EnrollmentNotFound)
+                .ThrowException();
+
             enrollment.SetStudentGrade(expectedStudentGrade);
         }
     }

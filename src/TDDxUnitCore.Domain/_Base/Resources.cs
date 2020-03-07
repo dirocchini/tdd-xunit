@@ -18,5 +18,6 @@
         public static string CourseNotFound = "Course Not Found";
         public static string StudentNotFound = "Student Not Found";
         public static string InvalidGrade = "Must Have Grade";
+        public static string EnrollmentNotFound = "Enrollment Not Found";
     }
 }

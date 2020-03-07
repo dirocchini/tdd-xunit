@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Castle.Core.Resource;
 using Moq;
 using TDDxUnitCore.Domain._Base;
 using TDDxUnitCore.Domain.Audiences;
@@ -87,5 +88,13 @@ namespace TDDxUnitCore.Domain.UnitTest.Enrollments
 
 
         //TODO  -  VERIFICAR SE ENCONTROU A MATRICULA
+        [Fact]
+        public void FinishEnrollment_MustFindEnrollment_Void()
+        {
+            Enrollment invalidEnrollment = null;
+            _enrollmentRepository.Setup(r => r.GetById(It.IsAny<int>())).Returns(invalidEnrollment);
+
+            Assert.Throws<DomainCustomException>(() => _enrollmentService.FinishEnrollment(It.IsAny<int>(), 5)).WithMessage(Resources.EnrollmentNotFound);
+        }
     }
 }
