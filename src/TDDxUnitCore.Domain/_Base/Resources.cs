@@ -19,5 +19,7 @@
         public static string StudentNotFound = "Student Not Found";
         public static string InvalidGrade = "Must Have Grade";
         public static string EnrollmentNotFound = "Enrollment Not Found";
+        public static string ThisEnrollmentIsAlreadyFinished = "This Enrollment is Already Finished";
+        public static string CantFinishACancelledEnrollment = "Cant Finish a Cancelled Enrollment";
     }
 }

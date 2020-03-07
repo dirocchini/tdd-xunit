@@ -87,7 +87,6 @@ namespace TDDxUnitCore.Domain.UnitTest.Enrollments
         }
 
 
-        //TODO  -  VERIFICAR SE ENCONTROU A MATRICULA
         [Fact]
         public void FinishEnrollment_MustFindEnrollment_Void()
         {

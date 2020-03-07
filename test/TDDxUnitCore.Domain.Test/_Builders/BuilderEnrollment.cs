@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using System.Net.Http.Headers;
 using Bogus;
 using TDDxUnitCore.Domain.Audiences;
 using TDDxUnitCore.Domain.Courses;
@@ -14,6 +15,9 @@ namespace TDDxUnitCore.Domain.Test._Builders
         private Student _student { get; set; }
         private Course _course { get; set; }
         private double _paidValue { get; set; }
+        private bool Cancelled { get; set; }
+        private bool Finished { get; set; }
+
 
         private Faker _faker;
 
@@ -51,9 +55,31 @@ namespace TDDxUnitCore.Domain.Test._Builders
             return this;
         }
 
+        public BuilderEnrollment WithCancelled(bool cancelled)
+        {
+            Cancelled = cancelled;
+            return this;
+        }
+
+
+        public BuilderEnrollment WithFinished(bool finished)
+        {
+            Finished = finished;
+            return this;
+        }
+
+
         public Enrollment Build()
         {
-            return new Enrollment(_student, _course, _paidValue);
+            var enrollment = new Enrollment(_student, _course, _paidValue);
+
+            if (Cancelled)
+                enrollment.Cancel();
+
+            if (Finished)
+                enrollment.SetStudentGrade(8);
+
+            return enrollment;
         }
     }
 }

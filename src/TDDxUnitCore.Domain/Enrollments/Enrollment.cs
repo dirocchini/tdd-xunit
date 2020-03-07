@@ -12,6 +12,7 @@ namespace TDDxUnitCore.Domain.Enrollments
         public bool HasDiscount { get; private set; }
         public decimal StudentGrade { get; private set; }
         public bool CourseFinished { get; private set; }
+        public bool IsCancelled { get; private set; }
 
         public Enrollment(Student student, Course course, double paidValue)
         {
@@ -34,10 +35,20 @@ namespace TDDxUnitCore.Domain.Enrollments
         {
             RulerValidator.New()
                 .When(studentGrade < 0 || studentGrade > 10, Resources.InvalidGrade)
+                .When(IsCancelled, Resources.CantFinishACancelledEnrollment)
                 .ThrowException();
 
             StudentGrade = studentGrade;
             CourseFinished = true;
+        }
+
+        public void Cancel()
+        {
+            RulerValidator.New()
+                .When(CourseFinished, Resources.ThisEnrollmentIsAlreadyFinished)
+                .ThrowException();
+
+            IsCancelled = true;
         }
     }
 }
