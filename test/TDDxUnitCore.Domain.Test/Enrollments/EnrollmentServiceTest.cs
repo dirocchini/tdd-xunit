@@ -71,5 +71,21 @@ namespace TDDxUnitCore.Domain.UnitTest.Enrollments
 
             _enrollmentRepository.Verify(r => r.Add(It.Is<Enrollment>(m=> m.Course == _course && m.Student == _student)));
         }
+
+
+        //TODO - SHOW THIS EXAMPLE
+        [Fact]
+        public void UpdateGrade_MustChangeStudentGrade_Void()
+        {
+            var expectedStudentGrade = 8M;
+            var enrollment = BuilderEnrollment.New().Build();
+            _enrollmentRepository.Setup(r => r.GetById(enrollment.Id)).Returns(enrollment);
+
+            _enrollmentService.FinishEnrollment(enrollment.Id, expectedStudentGrade);
+            Assert.Equal(expectedStudentGrade, enrollment.StudentGrade);
+        }
+
+
+        //TODO  -  VERIFICAR SE ENCONTROU A MATRICULA
     }
 }

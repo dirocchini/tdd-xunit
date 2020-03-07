@@ -68,7 +68,7 @@ namespace TDDxUnitCore.Domain.UnitTest.Enrollments
         [Fact]
         public void EnrollmentMustHasDiscount() //dont make sense
         {
-            Course course = BuilderCourse.New().WithCost(100).WithAudience(Audience.CTO).Build();
+            Course course = BuilderCourse.New().WithCost(100).Build();
             double paidValue = course.Cost - 1;
 
             var enrollment = BuilderEnrollment.New().WithPaidValue(paidValue).WithCourse(course).Build();
@@ -84,6 +84,39 @@ namespace TDDxUnitCore.Domain.UnitTest.Enrollments
             var student = BuilderStudent.New().WithAudience(Audience.Student).Build();
 
             Assert.Throws<DomainCustomException>(() => BuilderEnrollment.New().WithCourse(course).WithStudent(student).Build()).WithMessage(Resources.AudienceNotEquals);
+        }
+
+
+        [Fact]
+        public void MustSetStudantGrade()
+        {
+            decimal validGrade = 5;
+            var enrollment = BuilderEnrollment.New().Build();
+
+            enrollment.SetStudentGrade(validGrade);
+            Assert.Equal(validGrade, enrollment.StudentGrade);
+        }
+
+
+        [Theory]
+        [InlineData(-1)]
+        [InlineData(11)]
+        public void GradeMustBeValid(decimal invalidStudentGradeValue)
+        {
+            var enrollment = BuilderEnrollment.New().Build();
+            Assert.Throws<DomainCustomException>(() => enrollment.SetStudentGrade(invalidStudentGradeValue)).WithMessage(Resources.InvalidGrade);
+        }
+
+
+        [Fact]
+        public void MustIndicatedFinishedCourse()
+        {
+            decimal validStudentGrade = 9.5M;
+
+            var enrollment = BuilderEnrollment.New().Build();
+            enrollment.SetStudentGrade(validStudentGrade);
+
+            Assert.True(enrollment.CourseFinished);
         }
     }
 }

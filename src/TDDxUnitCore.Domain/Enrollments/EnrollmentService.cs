@@ -29,7 +29,12 @@ namespace TDDxUnitCore.Domain.Enrollments
                 .ThrowException();
 
             _enrollmentRepository.Add(new Enrollment(student, course, enrollmentDto.CostPaid));
+        }
 
+        public void FinishEnrollment(int enrollmentId, decimal expectedStudentGrade)
+        {
+            var enrollment = _enrollmentRepository.GetById(enrollmentId);
+            enrollment.SetStudentGrade(expectedStudentGrade);
         }
     }
 }

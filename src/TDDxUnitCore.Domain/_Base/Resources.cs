@@ -17,5 +17,6 @@
         public static string AudienceNotEquals = "Audience Must Be Equal";
         public static string CourseNotFound = "Course Not Found";
         public static string StudentNotFound = "Student Not Found";
+        public static string InvalidGrade = "Must Have Grade";
     }
 }

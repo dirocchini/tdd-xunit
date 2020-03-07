@@ -23,7 +23,7 @@ namespace TDDxUnitCore.Domain.UnitTest._Builders
             _name = _faker.Person.FullName;
             _email = _faker.Person.Email;
             _document = _faker.Person.Cpf(true);
-            _audience = Audience.CTO;
+            _audience = Audience.NonDev;
         }
 
 

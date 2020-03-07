@@ -4,12 +4,14 @@ using TDDxUnitCore.Domain.Students;
 
 namespace TDDxUnitCore.Domain.Enrollments
 {
-    public class Enrollment
+    public class Enrollment : Entity
     {
         public Student Student { get; private set; }
         public Course Course { get; private set; }
         public double PaidValue { get; private set; }
         public bool HasDiscount { get; private set; }
+        public decimal StudentGrade { get; private set; }
+        public bool CourseFinished { get; private set; }
 
         public Enrollment(Student student, Course course, double paidValue)
         {
@@ -26,6 +28,16 @@ namespace TDDxUnitCore.Domain.Enrollments
             Course = course;
             PaidValue = paidValue;
             HasDiscount = paidValue < course.Cost;
+        }
+
+        public void SetStudentGrade(decimal studentGrade)
+        {
+            RulerValidator.New()
+                .When(studentGrade < 0 || studentGrade > 10, Resources.InvalidGrade)
+                .ThrowException();
+
+            StudentGrade = studentGrade;
+            CourseFinished = true;
         }
     }
 }
